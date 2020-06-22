@@ -12,9 +12,9 @@ sections:
   create: documents
   match: "**/*"
   exclude: "*.mdx"
-  new_doc_ext: ".mdx"
-upload_dir: uploads
-public_path: "/uploads"
+  new_doc_ext: mdx
+upload_dir: content/images
+public_path: "/content/images"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
