@@ -19,5 +19,11 @@ fields:
     time_format: 
     display_utc: false
   default: now
+- name: coverImage
+  type: file
+  config:
+    maxSize: 64
+  label: Cover Image
+  description: The image for thumbnails and summarys.
 pages:
 - content/test-post.mdx
