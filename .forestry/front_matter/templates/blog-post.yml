@@ -1,4 +1,21 @@
 ---
 label: Blog Post
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  description: Title of the blog post.
+  default: Blog Post Title
+- name: date
+  type: datetime
+  label: Date
+  description: The date of blog post creation.
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
