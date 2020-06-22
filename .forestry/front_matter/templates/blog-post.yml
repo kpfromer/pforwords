@@ -25,5 +25,3 @@ fields:
     maxSize: 64
   label: Cover Image
   description: The image for thumbnails and summarys.
-pages:
-- content/test-post.mdx
