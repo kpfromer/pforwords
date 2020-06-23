@@ -6,13 +6,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: `${__dirname}/src/images`,
-      },
-    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
@@ -35,8 +28,40 @@ module.exports = {
         includedRoutes: ["**/posts"],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    // Images/blog
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/images`,
+        name: `images`,
+      },
+    },
+    `gatsby-plugin-mdx`,
+    // import blog posts
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
+    },
+    `gatsby-remark-images`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+
+      options: {
+        plugins: [`gatsby-remark-images`],
+        gatsbyRemarkPlugins: [
+          "gatsby-remark-relative-source",
+          // "gatsby-remark-copy-linked-files",
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1000,
+            },
+          },
+        ],
+      },
+    },
   ],
 }
