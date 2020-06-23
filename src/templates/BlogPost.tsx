@@ -5,11 +5,19 @@ import { Link } from "../components/Link"
 // import SEO from "../components/SEO"
 import { Box, Flex, Heading, Text } from "rebass"
 import { Layout } from "../components/Layout"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 export default ({ data, pageContext }) => {
   const {
-    wordpressPost: { author, categories, date, title, content },
+    mdx: {
+      body,
+      frontmatter: { title, coverImage, date },
+      // fields: {
+      //   readingTime: { text: readingTime },
+      // },
+    },
   } = data
+  const { previous, next } = pageContext
   return (
     <>
       {/* <SEO
@@ -27,7 +35,7 @@ export default ({ data, pageContext }) => {
             {title}
           </Heading>
 
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+          <MDXRenderer>{body}</MDXRenderer>
         </Box>
       </Layout>
     </>
@@ -36,13 +44,28 @@ export default ({ data, pageContext }) => {
 
 export const query = graphql`
   query BlogPostById($id: String!) {
-    wordpressPost(id: { eq: $id }) {
-      author
-      categories
-      date
-      title
-      slug
-      content
+    mdx(id: { eq: $id }) {
+      id
+      body
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        # tags
+        # category
+        # coverImage {
+        #   childImageSharp {
+        #     fluid(maxWidth: 1000) {
+        #       ...GatsbyImageSharpFluid
+        #       src
+        #     }
+        #   }
+        # }
+      }
+      # fields {
+      #   readingTime {
+      #     text
+      #   }
+      # }
     }
   }
 `
