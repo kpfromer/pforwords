@@ -1,17 +1,19 @@
 import React from "react"
-import { Box, Flex } from "rebass"
-import { Heading } from "theme-ui"
+import { Box, Flex, Heading } from "theme-ui"
 import { Link } from "./Link"
 
 export const Header: React.FC<{ title: string }> = ({ title }) => {
   return (
     <Box as="header" px={3} variant="container">
-      <Box textAlign="center" mb={3}>
+      <Box sx={{ textAlign: "center" }} mb={3}>
         <Link
           to="/"
-          fontSize={6}
-          fontWeight="bold"
-          sx={{ textTransform: "uppercase", textDecoration: "none" }}
+          sx={{
+            fontSize: 6,
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            textDecoration: "none",
+          }}
         >
           {title}
         </Link>
@@ -22,9 +24,11 @@ export const Header: React.FC<{ title: string }> = ({ title }) => {
       </Box>
 
       <Flex
-        flexDirection={["column", "row"]}
-        justifyContent="space-between"
-        textAlign={["center", "left"]}
+        sx={{
+          flexDirection: ["column", "row"],
+          justifyContent: "space-between",
+          textAlign: ["center", "left"],
+        }}
       >
         <Link to="/blog" variant="nav">
           Blog

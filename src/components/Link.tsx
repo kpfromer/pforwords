@@ -1,12 +1,11 @@
 import React from "react"
 import { Link as GatsbyLink, GatsbyLinkProps } from "gatsby"
-import { Link as RebassLink } from "rebass"
+import { Link as ThemeLink, LinkProps } from "theme-ui"
 
-type Props = { variant?: string } & Omit<GatsbyLinkProps<any>, "ref">
+type Props = LinkProps & Omit<GatsbyLinkProps<any>, "ref">
 
 export const Link: React.FC<Props> = ({ children, ...rest }) => (
-  // @ts-ignore
-  <RebassLink as={GatsbyLink} {...rest}>
+  <ThemeLink as={GatsbyLink} {...rest}>
     {children}
-  </RebassLink>
+  </ThemeLink>
 )

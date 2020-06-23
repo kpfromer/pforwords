@@ -1,15 +1,15 @@
 import React from "react"
-import { Heading, HeadingProps, Box } from "rebass"
+import { Heading, HeadingProps, Box } from "theme-ui"
 
 export const Title: React.FC<HeadingProps> = ({ children, sx, ...rest }) => (
   // todo: fix typing
-  <Box textAlign="center" my={4}>
+  <Box my={4} sx={{ textAlign: "center" }}>
     <Heading
-      fontSize={5}
       {...(rest as any)}
       display="inline-block"
       sx={{
         ...sx,
+        fontSize: 5,
         px: "30px",
         position: "relative",
         "&:before": {
