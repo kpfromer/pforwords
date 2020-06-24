@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Flex, Box, Heading, Text, Image } from "rebass"
-import Img from "gatsby-image"
+import { Flex } from "rebass"
+import { Post } from "./Post"
 
 export const RecentBlogs = () => {
   const result = useStaticQuery(graphql`
@@ -10,7 +10,10 @@ export const RecentBlogs = () => {
         edges {
           node {
             id
-            body
+            excerpt(pruneLength: 250)
+            fields {
+              slug
+            }
             frontmatter {
               title
               date(formatString: "MMMM DD, YYYY")
@@ -32,24 +35,24 @@ export const RecentBlogs = () => {
   const posts = result.allMdx.edges.flatMap(post => post.node)
 
   return (
-    <Flex>
-      {posts.map(({ id, title, frontmatter: { coverImage } }) => (
-        <Box key={id} width={1 / posts.length} px={1}>
-          {/* <Image src={mediaUrl} /> */}
-          <Img
-            style={{
-              objectFit: "cover",
-              maxHeight: "50vh",
-              minWidth: "100%",
-            }}
-            fluid={coverImage.childImageSharp.fluid}
+    <Flex flexDirection="row" flexWrap="wrap">
+      {posts.map(
+        ({
+          id,
+          excerpt,
+          fields: { slug },
+          frontmatter: { title, coverImage, date },
+        }) => (
+          <Post
+            key={id}
+            title={title}
+            slug={slug}
+            coverImage={coverImage}
+            date={date}
+            excerpt={excerpt}
           />
-          <Heading textAlign="center">{title}</Heading>
-          {/* <Box>
-            <div dangerouslySetInnerHTML={{ __html: excerpt }} />
-          </Box> */}
-        </Box>
-      ))}
+        )
+      )}
     </Flex>
   )
 }

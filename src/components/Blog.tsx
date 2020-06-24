@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Flex, Box, Heading, Text, Image } from "rebass"
 import { Link } from "./Link"
 import Img from "gatsby-image"
+import { Post } from "./Post"
 
 export const Blog = () => {
   const result = useStaticQuery(graphql`
@@ -42,31 +43,16 @@ export const Blog = () => {
           id,
           excerpt,
           fields: { slug },
-          frontmatter: { title, coverImage },
+          frontmatter: { title, coverImage, date },
         }) => (
-          <Box key={id} width={[1, 1 / 2, 1 / 2, 1 / 3]} p={[2, 3, 3]}>
-            <Flex>
-              <Img
-                style={{
-                  objectFit: "cover",
-                  maxHeight: "50vh",
-                  minWidth: "100%",
-                }}
-                fluid={coverImage.childImageSharp.fluid}
-              />
-            </Flex>
-
-            <Link to={`/blog${slug}`}>
-              <Heading textAlign="center" my={3}>
-                {title}
-              </Heading>
-            </Link>
-            <Box>{excerpt}</Box>
-
-            {/* <Box>
-              <div dangerouslySetInnerHTML={{ __html: excerpt }} />
-            </Box> */}
-          </Box>
+          <Post
+            key={id}
+            title={title}
+            slug={slug}
+            coverImage={coverImage}
+            date={date}
+            excerpt={excerpt}
+          />
         )
       )}
     </Flex>
