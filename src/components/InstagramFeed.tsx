@@ -11,13 +11,6 @@ export const InstagramFeed = () => {
         edges {
           node {
             id
-            likes
-            comments
-            mediaType
-            preview
-            original
-            timestamp
-            caption
             localFile {
               childImageSharp {
                 fixed(width: 200, height: 200) {
@@ -29,16 +22,6 @@ export const InstagramFeed = () => {
                 }
               }
             }
-            # Only available with the public api scraper
-            # thumbnails {
-            #   src
-            #   config_width
-            #   config_height
-            # }
-            # dimensions {
-            #   height
-            #   width
-            # }
           }
         }
       }
