@@ -36,12 +36,16 @@ export const Sidebar: React.FC = () => {
         <Heading>resources:</Heading>
 
         <Box py={3}>
-          <Link to="/blog/100-swaps" mb={3} sx={{ display: "inline-block" }}>
+          <Link
+            to="/blog/100-swaps"
+            mb={3}
+            sx={{ display: "inline-block", color: "primary" }}
+          >
             100 Zero Waste Swaps for your entire home &amp; life!
           </Link>
           <Link
             to="/blog/online-zero-waste-stores"
-            sx={{ display: "inline-block" }}
+            sx={{ display: "inline-block", color: "primary" }}
           >
             Online Zero Waste Stores (so you can live sustainably anywhere)!
           </Link>
