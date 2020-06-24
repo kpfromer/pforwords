@@ -1,10 +1,15 @@
 import React from "react"
-import { Box, Flex, Heading } from "theme-ui"
+import { Box, Flex, Heading, Text } from "theme-ui"
 import { Link } from "./Link"
 
 export const Header: React.FC<{ title: string }> = ({ title }) => {
   return (
-    <Box as="header" px={3} variant="container">
+    <Flex
+      as="header"
+      px={3}
+      variant="container"
+      sx={{ flexDirection: ["column", "column", "row"], alignItems: "center" }}
+    >
       <Box sx={{ textAlign: "center" }} mb={3}>
         <Link
           to="/"
@@ -18,12 +23,15 @@ export const Header: React.FC<{ title: string }> = ({ title }) => {
           {title}
         </Link>
 
-        <Heading as="h2" sx={{ textTransform: "lowercase" }}>
+        <Heading
+          sx={{ fontWeight: "normal", fontSize: 3, fontStyle: "italic" }}
+        >
           sustainable living on a budget
         </Heading>
       </Box>
 
       <Flex
+        ml={["none", "none", "auto"]}
         sx={{
           flexDirection: ["column", "row"],
           justifyContent: "space-between",
@@ -49,6 +57,6 @@ export const Header: React.FC<{ title: string }> = ({ title }) => {
           How To Start A Blog
         </Link>
       </Flex>
-    </Box>
+    </Flex>
   )
 }

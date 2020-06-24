@@ -58,7 +58,7 @@ export const theme = {
     text: "#000",
     background: "#fff",
     primary: "#28635a",
-    secondary: "#041230",
+    secondary: "#e38251",
     muted: "#f6f6f6",
   },
   styles: {
@@ -98,7 +98,8 @@ export const theme = {
       lineHeight: "body",
     },
     a: {
-      color: "primary",
+      color: "secondary",
+      fontWeight: "bold",
       textDecoration: "none",
     },
     pre: {
@@ -130,9 +131,15 @@ export const theme = {
     },
   },
   // custom user variants
+  container: {
+    maxWidth: 1250,
+    mx: "auto",
+  },
   nav: {
     color: "primary",
     textDecoration: "none",
+    textAlign: "center",
+    px: 2,
     ":hover": {
       textDecoration: "underline",
     },

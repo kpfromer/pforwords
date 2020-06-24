@@ -7,6 +7,7 @@ import { Box, Flex, Heading, Text } from "rebass"
 import { Layout } from "../components/Layout"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
+import { Sidebar } from "../components/Sidebar"
 
 export default ({ data, pageContext }) => {
   const {
@@ -26,29 +27,38 @@ export default ({ data, pageContext }) => {
         // image={`${siteUrl}${thumbnail.childImageSharp.fluid.src}`}
       /> */}
       <Layout>
-        <Box mt={3}>
-          {/* // @ts-ignore */}
-          <Link to="/blog" rel="back" sx={{ display: "block" }} mb={3}>
-            ← Go Back
-          </Link>
+        <Flex>
+          <Box width={3 / 4} mt={3}>
+            {/* // @ts-ignore */}
+            <Link to="/blog" rel="back" sx={{ display: "block" }} mb={3}>
+              ← Go Back
+            </Link>
 
-          <Box mb={3}>
-            <Img
-              style={{
-                objectFit: "cover",
-                maxHeight: "50vh",
-                minWidth: "100%",
-              }}
-              fluid={coverImage.childImageSharp.fluid}
-            />
+            <Box mb={3}>
+              <Img
+                style={{
+                  objectFit: "scale-down",
+                  maxHeight: "50vh",
+                  minWidth: "100%",
+                }}
+                fluid={coverImage.childImageSharp.fluid}
+              />
+            </Box>
+
+            <Box>
+              <Text as="small">{date}</Text>
+            </Box>
+
+            <Heading fontSize={5} textAlign="center">
+              {title}
+            </Heading>
+
+            <MDXRenderer>{body}</MDXRenderer>
           </Box>
-
-          <Heading fontSize={5} textAlign="center">
-            {title}
-          </Heading>
-
-          <MDXRenderer>{body}</MDXRenderer>
-        </Box>
+          <Box width={1 / 4} mt={5}>
+            <Sidebar />
+          </Box>
+        </Flex>
       </Layout>
     </>
   )
