@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { fmImagesToRelative } = require("gatsby-remark-relative-source")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -61,7 +62,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === "Mdx") {
     const value = createFilePath({ node, getNode })
-    console.log(value)
     createNodeField({
       name: `slug`,
       node,
@@ -73,4 +73,5 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: `/blog${value}`,
     })
   }
+  fmImagesToRelative(node)
 }

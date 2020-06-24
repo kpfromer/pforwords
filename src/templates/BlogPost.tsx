@@ -6,6 +6,7 @@ import { Link } from "../components/Link"
 import { Box, Flex, Heading, Text } from "rebass"
 import { Layout } from "../components/Layout"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import Img from "gatsby-image"
 
 export default ({ data, pageContext }) => {
   const {
@@ -31,6 +32,17 @@ export default ({ data, pageContext }) => {
             ← Go Back
           </Link>
 
+          <Box mb={3}>
+            <Img
+              style={{
+                objectFit: "cover",
+                maxHeight: "50vh",
+                minWidth: "100%",
+              }}
+              fluid={coverImage.childImageSharp.fluid}
+            />
+          </Box>
+
           <Heading fontSize={5} textAlign="center">
             {title}
           </Heading>
@@ -52,14 +64,14 @@ export const query = graphql`
         date(formatString: "MMMM DD, YYYY")
         # tags
         # category
-        # coverImage {
-        #   childImageSharp {
-        #     fluid(maxWidth: 1000) {
-        #       ...GatsbyImageSharpFluid
-        #       src
-        #     }
-        #   }
-        # }
+        coverImage {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+              src
+            }
+          }
+        }
       }
       # fields {
       #   readingTime {

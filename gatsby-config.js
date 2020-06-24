@@ -6,8 +6,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
+
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -20,23 +19,16 @@ module.exports = {
         icon: "src/images/gatsby-icon.png", // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: "gatsby-source-wordpress",
-      options: {
-        baseUrl: "pforwords.com",
-        protocol: "https",
-        includedRoutes: ["**/posts"],
-      },
-    },
     // Images/blog
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/images`,
-        name: `images`,
+        name: `media`,
       },
     },
-    `gatsby-plugin-mdx`,
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     // import blog posts
     {
       resolve: `gatsby-source-filesystem`,
@@ -45,7 +37,7 @@ module.exports = {
         name: `blog`,
       },
     },
-    `gatsby-remark-images`,
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-plugin-mdx`,
 
