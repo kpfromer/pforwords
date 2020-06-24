@@ -13,6 +13,9 @@ export const RecentBlogs = () => {
             excerpt(pruneLength: 250)
             fields {
               slug
+              readingTime {
+                text
+              }
             }
             frontmatter {
               title
@@ -40,7 +43,10 @@ export const RecentBlogs = () => {
         ({
           id,
           excerpt,
-          fields: { slug },
+          fields: {
+            slug,
+            readingTime: { text: readingTime },
+          },
           frontmatter: { title, coverImage, date },
         }) => (
           <Post
@@ -50,6 +56,7 @@ export const RecentBlogs = () => {
             coverImage={coverImage}
             date={date}
             excerpt={excerpt}
+            readingTime={readingTime}
           />
         )
       )}

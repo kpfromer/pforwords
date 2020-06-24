@@ -21,6 +21,9 @@ export const Sidebar: React.FC = () => {
     <Box px={4}>
       <Box>
         <Img fluid={file.childImageSharp.fluid} />
+        <Heading mt={3} sx={{ textAlign: "center" }}>
+          Hi, I'm Taylor
+        </Heading>
         <Text mt={3} pb={3} as="p">
           Amateur adult. Zero waste zealot. Personal finance fiend. Spicy food
           supporter. I’m an mid 20’s gal living in Denver, Colorado. My love of

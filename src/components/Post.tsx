@@ -13,6 +13,7 @@ interface BlogPost {
   date: string
   slug: string
   excerpt: string
+  readingTime: string
 }
 
 export const Post: React.FC<BlogPost> = ({
@@ -21,6 +22,7 @@ export const Post: React.FC<BlogPost> = ({
   date,
   slug,
   excerpt,
+  readingTime,
 }) => {
   //   const { previous, next } = pageContext
   return (
@@ -33,14 +35,20 @@ export const Post: React.FC<BlogPost> = ({
             minWidth: "100%",
           }}
           fluid={coverImage.childImageSharp.fluid}
+          alt={title}
         />
       </Flex>
 
-      <Link to={`/blog${slug}`}>
-        <Heading textAlign="center" my={3}>
-          {title}
-        </Heading>
-      </Link>
+      <Box my={2}>
+        <Text as="small" sx={{ textTransform: "uppercase", display: "block" }}>
+          {/* TODO: add category page */}
+          {date} • {readingTime}
+        </Text>
+
+        <Link to={`/blog${slug}`} mt={2} sx={{ display: "block" }}>
+          <Heading textAlign="center">{title}</Heading>
+        </Link>
+      </Box>
 
       <Box>{excerpt}</Box>
     </Box>

@@ -6,6 +6,7 @@ export const Header: React.FC<{ title: string }> = ({ title }) => {
   return (
     <Flex
       as="header"
+      mt={3}
       px={3}
       variant="container"
       sx={{ flexDirection: ["column", "column", "row"], alignItems: "center" }}
@@ -14,8 +15,10 @@ export const Header: React.FC<{ title: string }> = ({ title }) => {
         <Link
           to="/"
           sx={{
+            fontFamily: "heading",
+            lineHeight: "heading",
+            fontWeight: "heading",
             fontSize: 6,
-            fontWeight: "bold",
             textTransform: "uppercase",
             textDecoration: "none",
           }}
@@ -41,20 +44,14 @@ export const Header: React.FC<{ title: string }> = ({ title }) => {
         <Link to="/blog" variant="nav">
           Blog
         </Link>
-        <Link to="/about" variant="nav">
-          Free Resources
-        </Link>
-        <Link to="/about" variant="nav">
-          Products
+        <Link to="/resources" variant="nav">
+          Resource Library
         </Link>
         <Link to="/about" variant="nav">
           About
         </Link>
         <Link to="/contact" variant="nav">
           Contact
-        </Link>
-        <Link to="/contact" variant="nav">
-          How To Start A Blog
         </Link>
       </Flex>
     </Flex>

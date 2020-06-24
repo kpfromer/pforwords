@@ -7,7 +7,8 @@ import { RecentBlogs } from "../components/RecentBlogs"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Title>recent posts</Title>
+
+    <Title my={3}>recent posts</Title>
     <RecentBlogs />
   </Layout>
 )

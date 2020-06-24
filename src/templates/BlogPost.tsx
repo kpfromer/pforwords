@@ -14,9 +14,9 @@ export default ({ data, pageContext }) => {
     mdx: {
       body,
       frontmatter: { title, coverImage, date },
-      // fields: {
-      //   readingTime: { text: readingTime },
-      // },
+      fields: {
+        readingTime: { text: readingTime },
+      },
     },
   } = data
   const { previous, next } = pageContext
@@ -45,13 +45,22 @@ export default ({ data, pageContext }) => {
               />
             </Box>
 
-            <Box>
-              <Text as="small">{date}</Text>
+            <Box mb={4}>
+              <Text as="small" sx={{ textTransform: "uppercase" }}>
+                {/* TODO: add category page */}
+                {date} • {readingTime}
+              </Text>
+              <Heading
+                fontSize={6}
+                sx={{
+                  borderBottom: "2px solid #eaecef",
+                }}
+                mt={2}
+                mb={3}
+              >
+                {title}
+              </Heading>
             </Box>
-
-            <Heading fontSize={5} textAlign="center">
-              {title}
-            </Heading>
 
             <MDXRenderer>{body}</MDXRenderer>
           </Box>
@@ -60,6 +69,25 @@ export default ({ data, pageContext }) => {
             <Sidebar />
           </Box>
         </Flex>
+
+        <Box as="nav" sx={{ borderTop: "2px solid #eaecef" }} pt={3} mb={4}>
+          <Flex flexWrap="wrap" justifyContent="space-between">
+            <Box>
+              {previous && (
+                <Link to={previous.fields.blogPath} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </Box>
+            <Box>
+              {next && (
+                <Link to={next.fields.blogPath} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </Box>
+          </Flex>
+        </Box>
       </Layout>
     </>
   )
@@ -73,8 +101,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        # tags
-        # category
+
         coverImage {
           childImageSharp {
             fluid(maxWidth: 1000) {
@@ -84,11 +111,11 @@ export const query = graphql`
           }
         }
       }
-      # fields {
-      #   readingTime {
-      #     text
-      #   }
-      # }
+      fields {
+        readingTime {
+          text
+        }
+      }
     }
   }
 `

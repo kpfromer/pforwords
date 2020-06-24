@@ -38,6 +38,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-mdx`,
+    "gatsby-remark-reading-time",
     {
       resolve: `gatsby-plugin-mdx`,
 
@@ -53,6 +54,13 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    // instagram
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `6665124804`,
       },
     },
   ],

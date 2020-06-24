@@ -3,7 +3,7 @@ import { Heading, HeadingProps, Box } from "theme-ui"
 
 export const Title: React.FC<HeadingProps> = ({ children, sx, ...rest }) => (
   // todo: fix typing
-  <Box my={4} sx={{ textAlign: "center" }}>
+  <Box sx={{ textAlign: "center" }}>
     <Heading
       {...(rest as any)}
       display="inline-block"
