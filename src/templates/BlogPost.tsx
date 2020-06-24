@@ -27,8 +27,8 @@ export default ({ data, pageContext }) => {
         // image={`${siteUrl}${thumbnail.childImageSharp.fluid.src}`}
       /> */}
       <Layout>
-        <Flex>
-          <Box width={3 / 4} mt={3}>
+        <Flex flexDirection={["column", "column", "row"]}>
+          <Box width={[1, 1, 3 / 4]} mt={3}>
             {/* // @ts-ignore */}
             <Link to="/blog" rel="back" sx={{ display: "block" }} mb={3}>
               ← Go Back
@@ -55,7 +55,8 @@ export default ({ data, pageContext }) => {
 
             <MDXRenderer>{body}</MDXRenderer>
           </Box>
-          <Box width={1 / 4} mt={5}>
+
+          <Box width={[1, 1, 1 / 4]} mt={5}>
             <Sidebar />
           </Box>
         </Flex>
