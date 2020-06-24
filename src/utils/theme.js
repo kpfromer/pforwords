@@ -139,6 +139,7 @@ export const theme = {
     textDecoration: "none",
     textAlign: "center",
     px: 2,
+    fontWeight: "bold",
     textTransform: "uppercase",
     ":hover": {
       textDecoration: "underline",
