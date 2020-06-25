@@ -1,8 +1,17 @@
 import React from "react"
-import { Box, Flex, Heading, Text } from "theme-ui"
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  useThemeUI,
+  Link as ThemeLink,
+} from "theme-ui"
 import { Link } from "./Link"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
+import { FaInstagram, FaPinterest, FaYoutube } from "react-icons/fa"
+import { IconContext } from "react-icons"
 
 export const Sidebar: React.FC = () => {
   const { file } = useStaticQuery(graphql`
@@ -17,6 +26,7 @@ export const Sidebar: React.FC = () => {
       }
     }
   `)
+  const { theme } = useThemeUI()
   return (
     <Box px={4}>
       <Box>
@@ -32,6 +42,27 @@ export const Sidebar: React.FC = () => {
           everyone interested in lessening their footprint while growing their
           wallet!
         </Text>
+        <Flex sx={{ justifyContent: "center" }} mb={3}>
+          <IconContext.Provider
+            value={{
+              style: {
+                verticalAlign: "middle",
+                color: theme.colors.secondary,
+              },
+              size: "2em",
+            }}
+          >
+            <ThemeLink href="https://www.instagram.com/taylor.pforwords/">
+              <FaInstagram />
+            </ThemeLink>
+            <ThemeLink mx={3} href="https://www.pinterest.com/pforwords/">
+              <FaPinterest />
+            </ThemeLink>
+            <ThemeLink href="https://www.youtube.com/channel/UCraysvt9W6qZQFDiJDT1OSw">
+              <FaYoutube />
+            </ThemeLink>
+          </IconContext.Provider>
+        </Flex>
         <hr />
         <Heading>resources:</Heading>
 

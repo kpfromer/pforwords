@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Flex, Heading, Text } from "theme-ui"
+import { Box, Flex, Heading } from "theme-ui"
 import { Link } from "./Link"
 
 export const Header: React.FC<{ title: string }> = ({ title }) => {

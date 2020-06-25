@@ -45,7 +45,11 @@ export const Post: React.FC<BlogPost> = ({
           {date} • {readingTime}
         </Text>
 
-        <Link to={`/blog${slug}`} mt={2} sx={{ display: "block" }}>
+        <Link
+          to={`/blog${slug}`}
+          mt={2}
+          sx={{ display: "block", color: "text" }}
+        >
           <Heading textAlign="center">{title}</Heading>
         </Link>
       </Box>
