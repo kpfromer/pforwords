@@ -26,3 +26,7 @@ fields:
     maxSize: 64
   label: Cover Image
   description: The image for thumbnails and summarys.
+- name: categories
+  type: tag_list
+  default: []
+  label: Categories
