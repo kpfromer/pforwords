@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
         px={3}
         variant="container"
         sx={{
-          flexDirection: "row",
+          flexDirection: ["column", "column", "row"],
           alignItems: "center",
         }}
       >
