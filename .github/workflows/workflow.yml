@@ -19,8 +19,7 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Install Surge
-        run: yarn global add surge
-
       - name: Deploy
-        run: surge ./public --token ${{ secrets.SURGE_TOKEN }}
+        run: |
+          surge ./public --token ${{ secrets.SURGE_TOKEN }}
+          yarn global add surge
