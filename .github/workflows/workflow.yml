@@ -25,4 +25,5 @@ jobs:
       - name: Deploy
         run: |
           yarn global add surge
+          echo "::add-path::$(yarn global bin)"
           surge ./public --token ${{ secrets.SURGE_TOKEN }}
