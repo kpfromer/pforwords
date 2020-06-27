@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
           alignItems: "center",
         }}
       >
-        <Link to="/blog" variant="nav">
+        <Link to="/" variant="nav">
           home
         </Link>
         <Link to="/blog" variant="nav">

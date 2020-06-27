@@ -1,5 +1,6 @@
 import React from "react"
 import { Box, Flex, Heading } from "theme-ui"
+import { Link as ThemeLink } from "rebass"
 import { Link } from "./Link"
 
 export const Header: React.FC<{ title: string }> = ({ title }) => {
@@ -44,9 +45,12 @@ export const Header: React.FC<{ title: string }> = ({ title }) => {
         <Link to="/blog" variant="nav">
           Blog
         </Link>
-        <Link to="/resources" variant="nav">
+        <ThemeLink
+          href="https://mailchi.mp/be227f5f5cdc/freeresources"
+          variant="nav"
+        >
           Resource Library
-        </Link>
+        </ThemeLink>
         <Link to="/about" variant="nav">
           About
         </Link>

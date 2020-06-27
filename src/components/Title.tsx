@@ -1,12 +1,14 @@
 import React from "react"
 import { Heading, HeadingProps, Box } from "theme-ui"
+import { Flex } from "rebass"
 
 export const Title: React.FC<HeadingProps> = ({ children, sx, ...rest }) => (
   // todo: fix typing
-  <Box sx={{ textAlign: "center" }}>
+  <Flex>
     <Heading
       {...(rest as any)}
       display="inline-block"
+      mx="auto"
       sx={{
         ...sx,
         fontSize: 5,
@@ -39,5 +41,5 @@ export const Title: React.FC<HeadingProps> = ({ children, sx, ...rest }) => (
     >
       {children}
     </Heading>
-  </Box>
+  </Flex>
 )

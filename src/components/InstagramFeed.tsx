@@ -31,7 +31,12 @@ export const InstagramFeed = () => {
   const instagramPosts = result.allInstaNode.edges.flatMap(post => post.node)
 
   return (
-    <Flex flexDirection="row" flexWrap="wrap" sx={{ justifyContent: "center" }}>
+    <Flex
+      flexDirection="row"
+      flexWrap="wrap"
+      sx={{ justifyContent: "center" }}
+      mt={4}
+    >
       {instagramPosts.map(post => (
         <Box key={post.id}>
           <Link
