@@ -6,7 +6,11 @@ import { Post } from "./Post"
 export const RecentBlogs = () => {
   const result = useStaticQuery(graphql`
     query GetRecentPosts {
-      allMdx(limit: 3, sort: { fields: frontmatter___date, order: DESC }) {
+      allMdx(
+        filter: { fileAbsolutePath: { regex: "/content/blog/" } }
+        limit: 3
+        sort: { fields: frontmatter___date, order: DESC }
+      ) {
         edges {
           node {
             id

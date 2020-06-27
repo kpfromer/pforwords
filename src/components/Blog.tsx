@@ -8,7 +8,10 @@ import { Post } from "./Post"
 export const Blog = () => {
   const result = useStaticQuery(graphql`
     query GetAllPosts {
-      allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+      allMdx(
+        filter: { fileAbsolutePath: { regex: "/content/blog/" } }
+        sort: { fields: frontmatter___date, order: DESC }
+      ) {
         edges {
           node {
             id
