@@ -5,11 +5,13 @@ const { fmImagesToRelative } = require("gatsby-remark-relative-source")
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
+  // create blog posts pages from /content/blog
   const blogPost = path.resolve(`./src/templates/BlogPost.tsx`)
   const result = await graphql(
     `
       {
         allMdx(
+          filter: { fileAbsolutePath: { regex: "/content/blog/" } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -52,6 +54,48 @@ exports.createPages = async ({ graphql, actions }) => {
         blogPath,
         previous,
         next,
+      },
+    })
+  })
+
+  // create mdx pages from /content/pages
+  const pageTemplate = path.resolve(`./src/templates/Page.tsx`)
+  const resultPage = await graphql(
+    `
+      {
+        allMdx(filter: { fileAbsolutePath: { regex: "/content/pages/" } }) {
+          edges {
+            node {
+              id
+              frontmatter {
+                title
+              }
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+
+  if (resultPage.errors) {
+    throw resultPage.errors
+  }
+
+  // Create blog posts pages.
+  const pages = resultPage.data.allMdx.edges
+
+  pages.forEach(post => {
+    const { slug } = post.node.fields
+
+    createPage({
+      path: slug,
+      component: pageTemplate,
+      context: {
+        id: post.node.id,
+        slug,
       },
     })
   })

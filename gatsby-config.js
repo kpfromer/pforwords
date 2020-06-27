@@ -64,5 +64,13 @@ module.exports = {
         username: `6665124804`,
       },
     },
+    // custom mdx pages
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/pages`,
+        name: `page`,
+      },
+    },
   ],
 }
