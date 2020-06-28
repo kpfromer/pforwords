@@ -69,6 +69,8 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "husky": {
-    "pre-push": "yarn build"
+    "hooks": {
+      "pre-push": "yarn build"
+    }
   }
 }
