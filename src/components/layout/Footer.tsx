@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Flex, Link as ThemeLink } from "theme-ui"
-import { Link } from "./Link"
-import { InstagramFeed } from "../components/InstagramFeed"
+import { Link } from "../basic/Link"
+import { InstagramFeed } from "../InstagramFeed"
 
 export const Footer: React.FC = () => {
   return (

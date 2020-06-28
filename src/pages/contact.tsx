@@ -1,7 +1,7 @@
 import React from "react"
-import { Layout } from "../components/Layout"
+import { Layout } from "../components/layout/Layout"
 import SEO from "../components/seo"
-import { Title } from "../components/Title"
+import { Title } from "../components/basic/Title"
 import { Text, Link } from "theme-ui"
 
 const ContactPage = () => (

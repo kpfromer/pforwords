@@ -7,7 +7,7 @@ import {
   useThemeUI,
   Link as ThemeLink,
 } from "theme-ui"
-import { Link } from "./Link"
+import { Link } from "../basic/Link"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { FaInstagram, FaPinterest, FaYoutube } from "react-icons/fa"

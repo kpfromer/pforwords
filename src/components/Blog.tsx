@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Flex, Box, Heading, Text, Image } from "rebass"
-import { Link } from "./Link"
+import { Link } from "./basic/Link"
 import Img from "gatsby-image"
 import { Post } from "./Post"
 

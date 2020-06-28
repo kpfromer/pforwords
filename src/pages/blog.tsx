@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Text } from "rebass"
-import { Layout } from "../components/Layout"
+import { Layout } from "../components/layout/Layout"
 import SEO from "../components/seo"
-import { Title } from "../components/Title"
+import { Title } from "../components/basic/Title"
 import { Blog } from "../components/Blog"
 
 const IndexPage = () => (

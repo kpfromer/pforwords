@@ -58,6 +58,7 @@ export const theme = {
     background: "#fff",
     primary: "#28635a",
     secondary: "#e38251",
+    tertiary: "#8ebaa8",
     muted: "#f6f6f6",
   },
   styles: {
