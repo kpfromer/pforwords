@@ -1,0 +1,9 @@
+---
+label: Custom Page
+hide_body: false
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
