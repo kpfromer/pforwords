@@ -55,6 +55,7 @@ export const Share: React.FC<Props & BoxProps> = ({
   ...rest
 }) => {
   return (
+    // @ts-ignore
     <Box {...rest}>
       {/* todo: counts */}
       <Box>
