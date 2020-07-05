@@ -14,6 +14,12 @@ sections:
   new_doc_ext: mdx
   templates:
   - blog-post
+- type: directory
+  path: content/pages
+  label: Custom Pages
+  create: documents
+  match: "**/*.mdx"
+  new_doc_ext: mdx
 upload_dir: content/images
 public_path: "/content/images"
 front_matter_path: ''
