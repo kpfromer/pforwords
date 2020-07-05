@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
+    url: "https://pforwords.com",
     title: "pforwords",
     description: "Sustainable living on a budget",
-    author: "@gatsbyjs",
+    author: "Taylor Pfromer",
   },
   plugins: [
     "gatsby-plugin-react-helmet",

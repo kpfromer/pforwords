@@ -8,13 +8,18 @@ import { Layout } from "../components/layout/Layout"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 import { Sidebar } from "../components/layout/Sidebar"
+import { Share } from "../components/layout/Share"
 
 export default ({ data, pageContext }) => {
   const {
+    site: {
+      siteMetadata: { url: baseUrl },
+    },
     mdx: {
       body,
       frontmatter: { title, coverImage, date },
       fields: {
+        slug,
         readingTime: { text: readingTime },
       },
     },
@@ -45,7 +50,7 @@ export default ({ data, pageContext }) => {
               />
             </Box>
 
-            <Box mb={4}>
+            <Box mb={2}>
               <Text as="small" sx={{ textTransform: "uppercase" }}>
                 {/* TODO: add category page */}
                 {date} • {readingTime}
@@ -62,6 +67,12 @@ export default ({ data, pageContext }) => {
               </Heading>
             </Box>
 
+            <Share
+              my={2}
+              shareUrl={`${baseUrl}/blog${slug}`}
+              imageUrl={`${baseUrl}${coverImage.publicURL}`}
+            />
+
             <MDXRenderer>{body}</MDXRenderer>
           </Box>
 
@@ -69,6 +80,12 @@ export default ({ data, pageContext }) => {
             <Sidebar />
           </Box>
         </Flex>
+
+        <Share
+          mb={4}
+          shareUrl={`${baseUrl}/blog${slug}`}
+          imageUrl={`${baseUrl}${coverImage.publicURL}`}
+        />
 
         <Box as="nav" sx={{ borderTop: "2px solid #eaecef" }} pt={3} mb={4}>
           <Flex flexWrap="wrap" justifyContent="space-between">
@@ -95,6 +112,11 @@ export default ({ data, pageContext }) => {
 
 export const query = graphql`
   query BlogPostById($id: String!) {
+    site {
+      siteMetadata {
+        url
+      }
+    }
     mdx(id: { eq: $id }) {
       id
       body
@@ -103,6 +125,7 @@ export const query = graphql`
         date(formatString: "MMMM DD, YYYY")
 
         coverImage {
+          publicURL
           childImageSharp {
             fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
@@ -112,6 +135,7 @@ export const query = graphql`
         }
       }
       fields {
+        slug
         readingTime {
           text
         }

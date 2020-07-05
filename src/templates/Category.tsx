@@ -4,38 +4,42 @@ import { Flex } from "rebass"
 import { Post } from "../components/Post"
 import { Title } from "../components/basic/Title"
 import { Layout } from "../components/layout/Layout"
+import SEO from "../components/seo"
 
 export default ({ data, pageContext }) => {
   const posts = data.allMdx.edges.flatMap(post => post.node)
 
   return (
-    <Layout>
-      <Title>{pageContext.category}</Title>
-      <Flex flexDirection="row" flexWrap="wrap">
-        {posts.map(
-          ({
-            id,
-            excerpt,
-            fields: {
-              slug,
-              readingTime: { text: readingTime },
-            },
-            frontmatter: { title, coverImage, date, categories },
-          }) => (
-            <Post
-              key={id}
-              title={title}
-              slug={slug}
-              coverImage={coverImage}
-              categories={categories}
-              date={date}
-              excerpt={excerpt}
-              readingTime={readingTime}
-            />
-          )
-        )}
-      </Flex>
-    </Layout>
+    <>
+      <SEO title={pageContext.category} />
+      <Layout>
+        <Title>{pageContext.category}</Title>
+        <Flex flexDirection="row" flexWrap="wrap">
+          {posts.map(
+            ({
+              id,
+              excerpt,
+              fields: {
+                slug,
+                readingTime: { text: readingTime },
+              },
+              frontmatter: { title, coverImage, date, categories },
+            }) => (
+              <Post
+                key={id}
+                title={title}
+                slug={slug}
+                coverImage={coverImage}
+                categories={categories}
+                date={date}
+                excerpt={excerpt}
+                readingTime={readingTime}
+              />
+            )
+          )}
+        </Flex>
+      </Layout>
+    </>
   )
 }
 
