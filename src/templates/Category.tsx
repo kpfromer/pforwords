@@ -20,13 +20,14 @@ export default ({ data, pageContext }) => {
               slug,
               readingTime: { text: readingTime },
             },
-            frontmatter: { title, coverImage, date },
+            frontmatter: { title, coverImage, date, categories },
           }) => (
             <Post
               key={id}
               title={title}
               slug={slug}
               coverImage={coverImage}
+              categories={categories}
               date={date}
               excerpt={excerpt}
               readingTime={readingTime}
@@ -60,6 +61,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
+            categories
             coverImage {
               childImageSharp {
                 fluid(maxWidth: 1000) {
