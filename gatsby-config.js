@@ -7,7 +7,12 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
