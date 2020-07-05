@@ -6,19 +6,22 @@ import { RecentBlogs } from "../components/RecentBlogs"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Box, Flex, Text } from "rebass"
+import { Link } from "gatsby"
 
 const Paragraph = props => <Text as="p" fontSize={[2, 2, 3]} {...props} />
 
-const Category = ({ image }) => (
+const Category = ({ to, image }) => (
   <Box width={[1, 1 / 2, 1 / 2, 1 / 3]} p={3}>
-    <Img
-      style={{
-        objectFit: "cover",
-        maxHeight: "50vh",
-        minWidth: "100%",
-      }}
-      fluid={image.childImageSharp.fluid}
-    />
+    <Link to={to}>
+      <Img
+        style={{
+          objectFit: "cover",
+          maxHeight: "50vh",
+          minWidth: "100%",
+        }}
+        fluid={image.childImageSharp.fluid}
+      />
+    </Link>
   </Box>
 )
 
@@ -90,6 +93,16 @@ const IndexPage = () => {
       }
     }
   `)
+
+  const categories = [
+    { name: "home", image: home },
+    { name: "lifestyle", image: lifestyle },
+    { name: "shopping", image: shopping },
+    { name: "travel", image: travel },
+    { name: "activism", image: activism },
+    { name: "education", image: education },
+  ]
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -129,8 +142,8 @@ const IndexPage = () => {
       <Title>categories</Title>
 
       <Flex flexWrap="wrap">
-        {[home, lifestyle, shopping, travel, activism, education].map(image => (
-          <Category key={image.childImageSharp.fluid.src} image={image} />
+        {categories.map(({ name, image }) => (
+          <Category key={name} to={`/category/${name}`} image={image} />
         ))}
       </Flex>
 

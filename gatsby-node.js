@@ -24,6 +24,8 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                # categories is used below for category pages
+                categories
               }
             }
           }
@@ -99,6 +101,27 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // Create categories pages
+
+  const categoryPage = path.resolve("./src/templates/Category.tsx")
+  // Get all categories as set
+  const categories = new Set(
+    posts.reduce(
+      (prev, post) => [...prev, ...post.node.frontmatter.categories],
+      []
+    )
+  )
+
+  categories.forEach(category => {
+    createPage({
+      path: `/category/${category.toLowerCase()}`,
+      component: categoryPage,
+      context: {
+        category,
+      },
+    })
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -118,4 +141,31 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
   fmImagesToRelative(node)
+}
+
+// Add default category to blog posts
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes } = actions
+  const typeDefs = [
+    "type Mdx implements Node { frontmatter: MdxFrontmatter }",
+    schema.buildObjectType({
+      name: "MdxFrontmatter",
+      fields: {
+        categories: {
+          type: "[String!]",
+          resolve(source, args, context, info) {
+            const { categories } = source
+            if (
+              categories == null ||
+              (Array.isArray(categories) && !categories.length)
+            ) {
+              return ["uncategorized"]
+            }
+            return categories
+          },
+        },
+      },
+    }),
+  ]
+  createTypes(typeDefs)
 }
