@@ -7,7 +7,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Box, Flex, Text } from "rebass"
 
-const Paragraph = props => <Text as="p" fontSize={[3, 3, 4]} {...props} />
+const Paragraph = props => <Text as="p" fontSize={[2, 2, 3]} {...props} />
 
 const Category = ({ image }) => (
   <Box width={[1, 1 / 2, 1 / 2, 1 / 3]} p={3}>
@@ -112,12 +112,16 @@ const IndexPage = () => {
         <Box sx={{ flexGrow: 1 }} mt={[3, 0, 0]} px={4}>
           <Title mb={3}>hi, i'm taylor</Title>
           <Paragraph>
-            How to live a more sustainable lifestyle while saving money.
+            I'm here to dispel the notion that living sustainably is expensive.
+            On the contrary - living a low impact lifestyle will save you money
+            while saving the planet.
           </Paragraph>
-          <Paragraph>Renewable energy Low Impact movement.</Paragraph>
           <Paragraph>
-            Whether you're new to this lifestyle or an expert, there's something
-            here for you.
+            Whether you're new to this lifestyle or more advanced, there is
+            always something more to learn and be done.{" "}
+          </Paragraph>
+          <Paragraph>
+            How to live a more sustainable lifestyle while saving money.
           </Paragraph>
         </Box>
       </Flex>
