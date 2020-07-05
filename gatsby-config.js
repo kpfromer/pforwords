@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    url: "https://pforwords.com",
+    siteUrl: "https://pforwords.com",
     title: "pforwords",
     description: "Sustainable living on a budget",
     author: "Taylor Pfromer",

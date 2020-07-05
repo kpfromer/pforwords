@@ -14,7 +14,7 @@ import SEO from "../components/seo"
 export default ({ data, pageContext }) => {
   const {
     site: {
-      siteMetadata: { url: baseUrl },
+      siteMetadata: { siteUrl: baseUrl },
     },
     mdx: {
       body,
@@ -115,7 +115,7 @@ export const query = graphql`
   query BlogPostById($id: String!) {
     site {
       siteMetadata {
-        url
+        siteUrl
       }
     }
     mdx(id: { eq: $id }) {
