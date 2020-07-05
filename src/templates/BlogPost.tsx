@@ -9,6 +9,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 import { Sidebar } from "../components/layout/Sidebar"
 import { Share } from "../components/layout/Share"
+import SEO from "../components/seo"
 
 export default ({ data, pageContext }) => {
   const {
@@ -27,10 +28,10 @@ export default ({ data, pageContext }) => {
   const { previous, next } = pageContext
   return (
     <>
-      {/* <SEO
+      <SEO
         title={title}
         // image={`${siteUrl}${thumbnail.childImageSharp.fluid.src}`}
-      /> */}
+      />
       <Layout>
         <Flex flexDirection={["column", "column", "row"]}>
           <Box width={[1, 1, 3 / 4]} mt={3}>

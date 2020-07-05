@@ -8,7 +8,7 @@ import { Blog } from "../components/Blog"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Blog" />
     <Title>blog posts</Title>
     <Blog />
   </Layout>
