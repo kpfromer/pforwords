@@ -34,7 +34,7 @@
     "typescript": "3.9.5"
   },
   "devDependencies": {
-    "@types/node": "14.0.13",
+    "@types/node": "14.0.18",
     "@types/react": "16.9.38",
     "@types/rebass": "4.0.6",
     "@types/theme-ui": "0.3.4",
