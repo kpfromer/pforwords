@@ -19,7 +19,7 @@ export default ({ data, pageContext }) => {
     },
     mdx: {
       body,
-      frontmatter: { title, coverImage, date, bottomGallery },
+      frontmatter: { title, coverImage, date, categories, bottomGallery },
       fields: {
         slug,
         readingTime: { text: readingTime },
@@ -54,8 +54,7 @@ export default ({ data, pageContext }) => {
 
             <Box mb={2}>
               <Text as="small" sx={{ textTransform: "uppercase" }}>
-                {/* TODO: add category page */}
-                {date} • {readingTime}
+                {date} • {readingTime} • {categories.join(", ")}
               </Text>
               <Heading
                 fontSize={6}
@@ -129,6 +128,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        categories
 
         coverImage {
           publicURL
