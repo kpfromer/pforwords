@@ -6505,7 +6505,7 @@ gatsby-plugin-react-helmet@3.3.9:
   dependencies:
     "@babel/runtime" "^7.10.3"
 
-gatsby-plugin-robots-txt@^1.5.1:
+gatsby-plugin-robots-txt@1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-robots-txt/-/gatsby-plugin-robots-txt-1.5.1.tgz#aea69ba1298f76e907cfcb8c1dfde996e5efff79"
   integrity sha512-hkCmoIgoCmW49GFeql8RLNIh9RsG7RosHm+wNA//oFdJSzaYX1VVXk3OV0O1+35xspovP14Kbo+U7x39nu2emA==
@@ -7712,7 +7712,7 @@ human-signals@^1.1.1:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
   integrity sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==
 
-husky@^4.2.5:
+husky@4.2.5:
   version "4.2.5"
   resolved "https://registry.yarnpkg.com/husky/-/husky-4.2.5.tgz#2b4f7622673a71579f901d9885ed448394b5fa36"
   integrity sha512-SYZ95AjKcX7goYVZtVZF2i6XiZcHknw50iXvY7b0MiGoj5RwdgRQNEHdb+gPDPCXKlzwrybjFjkL6FOj8uRhZQ==
@@ -11734,7 +11734,7 @@ react-refresh@^0.7.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.7.2.tgz#f30978d21eb8cac6e2f2fde056a7d04f6844dd50"
   integrity sha512-u5l7fhAJXecWUJzVxzMRU2Zvw8m4QmDNHlTrT5uo3KBlYBhmChd7syAakBoay1yIiVhx/8Fi7a6v6kQZfsw81Q==
 
-react-share@^4.2.0:
+react-share@4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/react-share/-/react-share-4.2.0.tgz#0b6458a15cf0d887513942f6787d62432e5d2d80"
   integrity sha512-bMEuhkMFTRVyPjwHyjlZyaQn4dm5udymWiEMPFIZVk8KJqlhb9Hox49u/5EA7M0oYYfSk1sh0MCaC8PsGKTj5A==
