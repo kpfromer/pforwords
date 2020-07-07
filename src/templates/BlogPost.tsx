@@ -10,6 +10,7 @@ import Img from "gatsby-image"
 import { Sidebar } from "../components/layout/Sidebar"
 import { Share } from "../components/layout/Share"
 import SEO from "../components/seo"
+import { BottomGallery } from "../components/layout/BottomGallery"
 
 export default ({ data, pageContext }) => {
   const {
@@ -18,7 +19,7 @@ export default ({ data, pageContext }) => {
     },
     mdx: {
       body,
-      frontmatter: { title, coverImage, date },
+      frontmatter: { title, coverImage, date, bottomGallery },
       fields: {
         slug,
         readingTime: { text: readingTime },
@@ -88,6 +89,10 @@ export default ({ data, pageContext }) => {
           imageUrl={`${baseUrl}${coverImage.publicURL}`}
         />
 
+        {!!bottomGallery && bottomGallery.length > 0 && (
+          <BottomGallery data={bottomGallery} />
+        )}
+
         <Box as="nav" sx={{ borderTop: "2px solid #eaecef" }} pt={3} mb={4}>
           <Flex flexWrap="wrap" justifyContent="space-between">
             <Box>
@@ -131,6 +136,19 @@ export const query = graphql`
             fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
               src
+            }
+          }
+        }
+
+        bottomGallery {
+          blogName
+          image {
+            publicURL
+            childImageSharp {
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid
+                src
+              }
             }
           }
         }

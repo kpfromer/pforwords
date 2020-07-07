@@ -148,6 +148,19 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
   const typeDefs = [
     "type Mdx implements Node { frontmatter: MdxFrontmatter }",
+    // `
+    //   interface BottomGallery {
+    //     blogName: String!
+    //     image: String!
+    //   }
+    // `,
+    // schema.buildObjectType({
+    //   name: "BottomGallery",
+    //   fields: {
+    //     blogName: "String!",
+    //     image: "String!",
+    //   },
+    // }),
     schema.buildObjectType({
       name: "MdxFrontmatter",
       fields: {
@@ -164,6 +177,19 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
             return categories
           },
         },
+        // bottomGallery: {
+        //   type: "[BottomGallery]",
+        //   resolve(source, args, context, info) {
+        //     const { bottomGallery } = source
+        //     if (
+        //       bottomGallery == null ||
+        //       (Array.isArray(bottomGallery) && !bottomGallery.length)
+        //     ) {
+        //       return []
+        //     }
+        //     return bottomGallery
+        //   },
+        // },
       },
     }),
   ]
