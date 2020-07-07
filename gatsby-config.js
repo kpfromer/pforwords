@@ -62,6 +62,17 @@ module.exports = {
         ],
       },
     },
+    // Pinterest Buttons
+    {
+      resolve: `gatsby-plugin-pinterest`,
+      options: {
+        saveButton: {
+          round: false,
+          tall: true,
+        },
+      },
+    },
+
     // instagram
     {
       resolve: `gatsby-source-instagram`,

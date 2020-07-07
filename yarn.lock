@@ -934,7 +934,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.0":
+"@babel/runtime@^7.10.0", "@babel/runtime@^7.8.7":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.4.tgz#a6724f1a6b8d2f6ea5236dbfe58c7d7ea9c5eb99"
   integrity sha512-UpTN5yUJr9b4EX2CnGNWIvER7Ab83ibv0pcvvHc4UOdrBI5jb8bj+32cCwPX6xu0mt2daFNjYhoi+X7beH0RSw==
@@ -6502,6 +6502,13 @@ gatsby-plugin-page-creator@^2.3.15:
     glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
+
+gatsby-plugin-pinterest@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-pinterest/-/gatsby-plugin-pinterest-3.0.0.tgz#46bb713fa2dd3d56a59f40306e4a89446ad52b3e"
+  integrity sha512-Wfrvtk3R90VW5/USMdFn+BnDE9V9mzZjuenZIFb8Uhp56Z7Z8uVtLwLzyi2mvytkDQCx/8MMzgJuF3O1cCCe6w==
+  dependencies:
+    "@babel/runtime" "^7.8.7"
 
 gatsby-plugin-react-helmet@3.3.9:
   version "3.3.9"
