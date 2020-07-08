@@ -1,4 +1,27 @@
 ---
 label: Content Library
 hide_body: true
-fields: []
+fields:
+- name: content
+  type: field_group_list
+  fields:
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: Image
+  - name: url
+    type: text
+    config:
+      required: true
+    label: URL
+  - name: description
+    type: text
+    config:
+      required: false
+    label: Description
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Content
