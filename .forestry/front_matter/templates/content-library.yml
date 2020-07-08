@@ -15,11 +15,11 @@ fields:
     config:
       required: true
     label: URL
-  - name: description
+  - name: title
     type: text
     config:
-      required: false
-    label: Description
+      required: true
+    label: Title
   config:
     min: 
     max: 
