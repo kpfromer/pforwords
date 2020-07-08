@@ -5,6 +5,11 @@ fields:
 - name: content
   type: field_group_list
   fields:
+  - name: title
+    type: text
+    config:
+      required: true
+    label: Title
   - name: image
     type: file
     config:
@@ -15,11 +20,6 @@ fields:
     config:
       required: true
     label: URL
-  - name: title
-    type: text
-    config:
-      required: true
-    label: Title
   config:
     min: 
     max: 
