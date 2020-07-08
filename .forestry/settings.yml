@@ -20,6 +20,10 @@ sections:
   create: documents
   match: "**/*.mdx"
   new_doc_ext: mdx
+- type: document
+  path: content/data/content-library.json
+  label: Content Library
+  match: "**/*"
 upload_dir: content/images
 public_path: "/content/images"
 front_matter_path: ''
