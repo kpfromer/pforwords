@@ -25,3 +25,5 @@ fields:
     max: 
     labelField: 
   label: Content
+pages:
+- content/data/content-library.json
