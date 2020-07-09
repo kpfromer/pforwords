@@ -1,6 +1,11 @@
 {
   "content": [
     {
+      "title": "My Favorite Low Waste DIYs",
+      "image": "/content/images/cover-of-favorite-diys-ebook.png",
+      "pdf": "/content/images/favorite-diys-ebook-final.pdf"
+    },
+    {
       "title": "5 Easy Swaps to Live a Zero Waste Lifestyle",
       "image": "/content/images/cover-of-5-easy-swaps-to-live-a-zero-waste-lifestyle-guide.png",
       "pdf": "/content/images/5-easy-swaps-to-live-a-zero-waste-lifestyle-guide-1-min.pdf"
@@ -13,6 +18,7 @@
     {
       "image": "/content/images/copy-of-documentaries-books-videos-cover.png",
       "title": "Sustainable Documentaries, Books, and Videos",
+      "url": "http://pforwords.com/wp-content/uploads/2019/07/Documentaries-Books-Videos-Full-min.pdf",
       "pdf": "/content/images/5-easy-swaps-to-live-a-zero-waste-lifestyle-guide-1-min.pdf"
     }
   ]
