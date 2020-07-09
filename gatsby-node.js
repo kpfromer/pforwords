@@ -2,6 +2,10 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const { fmImagesToRelative } = require("gatsby-remark-relative-source")
 
+const _ = require(`lodash`)
+const slash = require(`slash`)
+const deepMap = require("deep-map")
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -124,9 +128,50 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
+const fileNodes = []
+
+const fmImagesToRelativeJson = node => {
+  // pulled here: https://github.com/SublimateDesign/gatsby-remark-relative-source/blob/master/src/index.js
+  // Save file references
+  fileNodes.push(node)
+  // Only process markdown files
+  // console.log(node.internal.type)
+  if (node.internal.type === `DataJson`) {
+    console.log(node)
+    // Convert paths in frontmatter to relative
+    function makeRelative(value) {
+      if (_.isString(value) && path.isAbsolute(value)) {
+        console.log({ value })
+        const { base } = path.parse(value)
+        // assuming json lives in /content/data
+        console.log(path.join("../images", base))
+        return path.join("../images", base)
+
+        // let imagePath
+        // const foundImageNode = _.find(fileNodes, file => {
+        //   if (!file.dir) return
+        //   imagePath = path.join(file.dir, path.basename(value))
+        //   return slash(path.normalize(file.absolutePath)) === slash(imagePath)
+        // })
+        // console.log(foundImageNode)
+        // if (foundImageNode) {
+        //   return slash(
+        //     path.relative(path.join(node.fileAbsolutePath, ".."), imagePath)
+        //   )
+        // }
+      }
+      return value
+    }
+    // Deeply iterate through frontmatter data for absolute paths
+    deepMap(node.content, makeRelative, { inPlace: true })
+  }
+}
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
+  fmImagesToRelative(node)
+  fmImagesToRelativeJson(node)
   if (node.internal.type === "Mdx") {
     const value = createFilePath({ node, getNode })
     createNodeField({
@@ -140,7 +185,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: `/blog${value}`,
     })
   }
-  fmImagesToRelative(node)
 }
 
 // Add default category to blog posts

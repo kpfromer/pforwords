@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
         <Link to="/contact" variant="nav">
           contact
         </Link>
-        <Link to="/free-content-library" variant="nav">
+        <Link to="/content-library" variant="nav">
           free content library
         </Link>
         <Link to="/terms" variant="nav">

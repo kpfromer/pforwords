@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://pforwords.com",
+    siteUrl: "http://pforwords.surge.sh",
     title: "pforwords",
     description: "Sustainable living on a budget",
     author: "Taylor Pfromer",
@@ -25,6 +25,15 @@ module.exports = {
         icon: "src/images/favicon.png", // This path is relative to the root of the site.
       },
     },
+    // content library
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/data`,
+        name: "data",
+      },
+    },
+    "gatsby-transformer-json",
     // Images/blog
     {
       resolve: `gatsby-source-filesystem`,
