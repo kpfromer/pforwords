@@ -1,8 +1,13 @@
 {
   "content": [
     {
+      "title": "Zero Waste Travel Checklist",
+      "image": "/content/images/travel-checklist-cover.png",
+      "pdf": "/content/images/travel-checklist-ebook.pdf"
+    },
+    {
       "image": "/content/images/copy-of-documentaries-books-videos-cover.png",
-      "title": "SUSTAINABLE DOCUMENTARIES, BOOKS, & VIDEOS",
+      "title": "Sustainable Documentaries, Books, and Videos",
       "pdf": "/content/images/5-easy-swaps-to-live-a-zero-waste-lifestyle-guide-1-min.pdf"
     }
   ]
