@@ -141,10 +141,8 @@ const fmImagesToRelativeJson = node => {
     // Convert paths in frontmatter to relative
     function makeRelative(value) {
       if (_.isString(value) && path.isAbsolute(value)) {
-        console.log({ value })
         const { base } = path.parse(value)
         // assuming json lives in /content/data
-        console.log(path.join("../images", base))
         return path.join("../images", base)
 
         // let imagePath
