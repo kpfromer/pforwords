@@ -1,6 +1,21 @@
 {
   "content": [
     {
+      "title": "Free Ways to Live More Sustainably",
+      "image": "/content/images/free-swaps-cover-page.png",
+      "pdf": "/content/images/free-swaps.pdf"
+    },
+    {
+      "title": "Zero Waste Bathroom Swaps",
+      "image": "/content/images/cover-zero-waste-bathroom-checklist.png",
+      "pdf": "/content/images/zero-waste-bathroom-checklist.pdf"
+    },
+    {
+      "title": "My Favorite Low Waste DIYs",
+      "image": "/content/images/cover-of-favorite-diys-ebook.png",
+      "pdf": "/content/images/favorite-diys-ebook-final.pdf"
+    },
+    {
       "title": "5 Easy Swaps to Live a Zero Waste Lifestyle",
       "image": "/content/images/cover-of-5-easy-swaps-to-live-a-zero-waste-lifestyle-guide.png",
       "pdf": "/content/images/5-easy-swaps-to-live-a-zero-waste-lifestyle-guide-1-min.pdf"
@@ -13,6 +28,7 @@
     {
       "image": "/content/images/copy-of-documentaries-books-videos-cover.png",
       "title": "Sustainable Documentaries, Books, and Videos",
+      "url": "http://pforwords.com/wp-content/uploads/2019/07/Documentaries-Books-Videos-Full-min.pdf",
       "pdf": "/content/images/5-easy-swaps-to-live-a-zero-waste-lifestyle-guide-1-min.pdf"
     }
   ]
