@@ -15,11 +15,11 @@ fields:
     config:
       maxSize: 64
     label: Image
-  - name: url
-    type: text
+  - name: pdf
+    type: file
     config:
-      required: true
-    label: URL
+      maxSize: 64
+    label: PDF
   config:
     min: 
     max: 
