@@ -14,7 +14,7 @@ const ContactPage = () => {
       siteMetadata: { siteUrl },
     },
     file: {
-      childDataJson: { content },
+      childDataJson: { password: wantedPassword, content },
     },
   } = useStaticQuery(graphql`
     query ContentLibrary {
@@ -26,6 +26,7 @@ const ContactPage = () => {
 
       file(relativePath: { eq: "content-library.json" }) {
         childDataJson {
+          password
           content {
             image {
               childImageSharp {
@@ -51,7 +52,7 @@ const ContactPage = () => {
   const [password, setPassword] = useState("")
   const onSubmit = event => {
     event.preventDefault()
-    if (password === "password") {
+    if (password === wantedPassword) {
       setValid(true)
       typeof window !== "undefined" &&
         window.localStorage.setItem("content-library", "true")
