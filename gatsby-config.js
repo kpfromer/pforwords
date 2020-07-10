@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "http://pforwords.surge.sh",
+    siteUrl: "https://pforwords.com",
     title: "pforwords",
     description: "Sustainable living on a budget",
     author: "Taylor Pfromer",
