@@ -45,14 +45,16 @@ const ContactPage = () => {
   `)
 
   const [valid, setValid] = useState(
-    localStorage?.getItem("content-library") === "true"
+    typeof window !== "undefined" &&
+      localStorage.getItem("content-library") === "true"
   )
   const [password, setPassword] = useState("")
   const onSubmit = event => {
     event.preventDefault()
     if (password === "password") {
       setValid(true)
-      window?.localStorage.setItem("content-library", "true")
+      typeof window !== "undefined" &&
+        window.localStorage.setItem("content-library", "true")
     }
   }
   return (
