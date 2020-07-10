@@ -2,6 +2,13 @@
 label: Content Library
 hide_body: true
 fields:
+- name: password
+  type: text
+  config:
+    required: true
+  label: Password
+  description: THIS IS PUBLICALLY AVAILABLE.
+  default: password
 - name: content
   type: field_group_list
   fields:
