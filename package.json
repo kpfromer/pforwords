@@ -29,6 +29,7 @@
     "gatsby-source-wordpress": "3.3.19",
     "gatsby-transformer-json": "^2.4.10",
     "gatsby-transformer-sharp": "2.5.10",
+    "lint-staged": "^10.2.11",
     "lodash": "^4.17.15",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -75,7 +76,10 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn build"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": ["eslint --fix","prettier --write"]
   }
 }
