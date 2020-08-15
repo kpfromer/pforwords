@@ -11,7 +11,7 @@
     "@rebass/preset": "4.0.5",
     "deep-map": "2.0.0",
     "gatsby": "2.24.15",
-    "gatsby-background-image": "1.1.1",
+    "gatsby-background-image": "1.1.2",
     "gatsby-image": "2.4.14",
     "gatsby-plugin-manifest": "2.4.21",
     "gatsby-plugin-mdx": "1.2.30",
