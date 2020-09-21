@@ -25,7 +25,7 @@
     "gatsby-remark-reading-time": "1.1.0",
     "gatsby-remark-relative-source": "0.0.4",
     "gatsby-source-filesystem": "2.3.23",
-    "gatsby-source-instagram": "0.8.0",
+    "gatsby-source-instagram": "0.9.0",
     "gatsby-source-wordpress": "3.3.26",
     "gatsby-transformer-json": "2.4.10",
     "gatsby-transformer-sharp": "2.5.12",
