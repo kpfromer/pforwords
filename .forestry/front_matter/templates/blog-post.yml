@@ -48,3 +48,5 @@ fields:
     max: 
     labelField: 
   label: Bottom Gallery
+pages:
+- content/blog/test.mdx
