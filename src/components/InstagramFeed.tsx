@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import { Link } from "theme-ui"
 
 export const InstagramFeed = () => {
-  const result = useStaticQuery(graphql`
+  const result = useStaticQuery<GatsbyTypes.GetInstagramPostsQuery>(graphql`
     query GetInstagramPosts {
       allInstaNode(limit: 6, sort: { fields: timestamp, order: DESC }) {
         edges {

@@ -4,7 +4,7 @@ import { Flex } from "rebass"
 import { Post } from "./Post"
 
 export const RecentBlogs = () => {
-  const result = useStaticQuery(graphql`
+  const result = useStaticQuery<GatsbyTypes.GetRecentPostsQuery>(graphql`
     query GetRecentPosts {
       allMdx(
         filter: { fileAbsolutePath: { regex: "/content/blog/" } }

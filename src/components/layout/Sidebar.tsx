@@ -14,8 +14,8 @@ import { FaInstagram, FaPinterest, FaYoutube } from "react-icons/fa"
 import { IconContext } from "react-icons"
 
 export const Sidebar: React.FC = () => {
-  const { file } = useStaticQuery(graphql`
-    {
+  const { file } = useStaticQuery<GatsbyTypes.SidebarImageQuery>(graphql`
+    query SidebarImage {
       file(relativePath: { eq: "global/sidebar-me.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 500) {

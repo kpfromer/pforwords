@@ -137,7 +137,6 @@ const fmImagesToRelativeJson = node => {
   // Only process markdown files
   // console.log(node.internal.type)
   if (node.internal.type === `DataJson`) {
-    console.log(node)
     // Convert paths in frontmatter to relative
     function makeRelative(value) {
       if (_.isString(value) && path.isAbsolute(value)) {

@@ -97,5 +97,6 @@ module.exports = {
         name: `page`,
       },
     },
+    "gatsby-plugin-typegen",
   ],
 }

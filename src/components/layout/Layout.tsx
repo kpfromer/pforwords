@@ -5,7 +5,7 @@ import { Box } from "rebass"
 import { Footer } from "./Footer"
 
 export const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<GatsbyTypes.SiteTitleQueryQuery>(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {

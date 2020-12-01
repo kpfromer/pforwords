@@ -16,7 +16,7 @@ const ContactPage = () => {
     file: {
       childDataJson: { password: wantedPassword, content },
     },
-  } = useStaticQuery(graphql`
+  } = useStaticQuery<GatsbyTypes.ContentLibraryQuery>(graphql`
     query ContentLibrary {
       site {
         siteMetadata {

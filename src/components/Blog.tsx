@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 import { Post } from "./Post"
 
 export const Blog = () => {
-  const result = useStaticQuery(graphql`
+  const result = useStaticQuery<GatsbyTypes.GetAllPostsQuery>(graphql`
     query GetAllPosts {
       allMdx(
         filter: { fileAbsolutePath: { regex: "/content/blog/" } }
