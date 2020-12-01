@@ -1,5 +1,5 @@
-import React from "react"
-import { ThemeProvider } from "theme-ui"
+import React from 'react';
+import { ThemeProvider } from 'theme-ui';
 // import presetTheme from "@rebass/preset"
 
 // const theme = {
@@ -30,17 +30,17 @@ import { ThemeProvider } from "theme-ui"
 // }
 
 const heading = {
-  color: "text",
-  fontFamily: "heading",
-  lineHeight: "heading",
-  fontWeight: "heading",
-}
+  color: 'text',
+  fontFamily: 'heading',
+  lineHeight: 'heading',
+  fontWeight: 'heading',
+};
 
 export const theme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body: "Roboto, sans-serif",
-    heading: "Overpass, sans-serif",
+    body: 'Roboto, sans-serif',
+    heading: 'Overpass, sans-serif',
     // monospace: "Menlo, monospace",
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
@@ -54,18 +54,18 @@ export const theme = {
     heading: 1.125,
   },
   colors: {
-    text: "#000",
-    background: "#fff",
-    primary: "#28635a",
-    secondary: "#e38251",
-    tertiary: "#8ebaa8",
-    muted: "#f6f6f6",
+    text: '#000',
+    background: '#fff',
+    primary: '#28635a',
+    secondary: '#e38251',
+    tertiary: '#8ebaa8',
+    muted: '#f6f6f6',
   },
   styles: {
     root: {
-      fontFamily: "body",
-      lineHeight: "body",
-      fontWeight: "body",
+      fontFamily: 'body',
+      lineHeight: 'body',
+      fontWeight: 'body',
     },
     h1: {
       ...heading,
@@ -92,62 +92,62 @@ export const theme = {
       fontSize: 0,
     },
     p: {
-      color: "text",
-      fontFamily: "body",
-      fontWeight: "body",
-      lineHeight: "body",
+      color: 'text',
+      fontFamily: 'body',
+      fontWeight: 'body',
+      lineHeight: 'body',
     },
     a: {
-      color: "secondary",
-      fontWeight: "bold",
-      textDecoration: "none",
+      color: 'secondary',
+      fontWeight: 'bold',
+      textDecoration: 'none',
     },
     pre: {
-      fontFamily: "monospace",
-      overflowX: "auto",
+      fontFamily: 'monospace',
+      overflowX: 'auto',
       code: {
-        color: "inherit",
+        color: 'inherit',
       },
     },
     code: {
-      fontFamily: "monospace",
-      fontSize: "inherit",
+      fontFamily: 'monospace',
+      fontSize: 'inherit',
     },
     table: {
-      width: "100%",
-      borderCollapse: "separate",
+      width: '100%',
+      borderCollapse: 'separate',
       borderSpacing: 0,
     },
     th: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
+      textAlign: 'left',
+      borderBottomStyle: 'solid',
     },
     td: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
+      textAlign: 'left',
+      borderBottomStyle: 'solid',
     },
     img: {
-      maxWidth: "100%",
+      maxWidth: '100%',
     },
   },
   // custom user variants
   container: {
     maxWidth: 1250,
-    mx: "auto",
+    mx: 'auto',
   },
   nav: {
-    color: "primary",
-    textDecoration: "none",
-    textAlign: "center",
+    color: 'primary',
+    textDecoration: 'none',
+    textAlign: 'center',
     px: 2,
-    fontWeight: "bold",
-    textTransform: "uppercase",
-    ":hover": {
-      textDecoration: "underline",
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    ':hover': {
+      textDecoration: 'underline',
     },
   },
-}
+};
 
 export const wrapRootElement = ({ element }) => (
   <ThemeProvider theme={theme}>{element}</ThemeProvider>
-)
+);

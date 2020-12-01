@@ -1,16 +1,16 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Link } from "../components/basic/Link"
+import React from 'react';
+import { graphql } from 'gatsby';
+import { Link } from '../components/basic/Link';
 // import Img from "gatsby-image"
 // import SEO from "../components/SEO"
-import { Box, Flex, Heading, Text } from "rebass"
-import { Layout } from "../components/layout/Layout"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import Img from "gatsby-image"
-import { Sidebar } from "../components/layout/Sidebar"
-import { Share } from "../components/layout/Share"
-import SEO from "../components/seo"
-import { BottomGallery } from "../components/layout/BottomGallery"
+import { Box, Flex, Heading, Text } from 'rebass';
+import { Layout } from '../components/layout/Layout';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import Img from 'gatsby-image';
+import { Sidebar } from '../components/layout/Sidebar';
+import { Share } from '../components/layout/Share';
+import SEO from '../components/seo';
+import { BottomGallery } from '../components/layout/BottomGallery';
 
 export default ({ data, pageContext }) => {
   const {
@@ -25,8 +25,8 @@ export default ({ data, pageContext }) => {
         readingTime: { text: readingTime },
       },
     },
-  } = data
-  const { previous, next } = pageContext
+  } = data;
+  const { previous, next } = pageContext;
   return (
     <>
       <SEO
@@ -34,32 +34,32 @@ export default ({ data, pageContext }) => {
         // image={`${siteUrl}${thumbnail.childImageSharp.fluid.src}`}
       />
       <Layout>
-        <Flex flexDirection={["column", "column", "row"]}>
+        <Flex flexDirection={['column', 'column', 'row']}>
           <Box width={[1, 1, 3 / 4]} mt={3}>
-            {/* // @ts-ignore */}
-            <Link to="/blog" rel="back" sx={{ display: "block" }} mb={3}>
+            {/* 
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore */}
+            <Link to="/blog" rel="back" sx={{ display: 'block' }} mb={3}>
               ← Go Back
             </Link>
-
             <Box mb={3}>
               <Img
                 style={{
-                  objectFit: "scale-down",
-                  maxHeight: "50vh",
-                  minWidth: "100%",
+                  objectFit: 'scale-down',
+                  maxHeight: '50vh',
+                  minWidth: '100%',
                 }}
                 fluid={coverImage.childImageSharp.fluid}
               />
             </Box>
-
             <Box mb={2}>
-              <Text as="small" sx={{ textTransform: "uppercase" }}>
-                {date} • {readingTime} • {categories.join(", ")}
+              <Text as="small" sx={{ textTransform: 'uppercase' }}>
+                {date} • {readingTime} • {categories.join(', ')}
               </Text>
               <Heading
                 fontSize={6}
                 sx={{
-                  borderBottom: "2px solid #eaecef",
+                  borderBottom: '2px solid #eaecef',
                 }}
                 mt={2}
                 mb={3}
@@ -67,13 +67,11 @@ export default ({ data, pageContext }) => {
                 {title}
               </Heading>
             </Box>
-
             <Share
               my={2}
               shareUrl={`${baseUrl}/blog${slug}`}
               imageUrl={`${baseUrl}${coverImage.publicURL}`}
             />
-
             <MDXRenderer>{body}</MDXRenderer>
           </Box>
 
@@ -88,11 +86,9 @@ export default ({ data, pageContext }) => {
           imageUrl={`${baseUrl}${coverImage.publicURL}`}
         />
 
-        {!!bottomGallery && bottomGallery.length > 0 && (
-          <BottomGallery data={bottomGallery} />
-        )}
+        {!!bottomGallery && bottomGallery.length > 0 && <BottomGallery data={bottomGallery} />}
 
-        <Box as="nav" sx={{ borderTop: "2px solid #eaecef" }} pt={3} mb={4}>
+        <Box as="nav" sx={{ borderTop: '2px solid #eaecef' }} pt={3} mb={4}>
           <Flex flexWrap="wrap" justifyContent="space-between">
             <Box>
               {previous && (
@@ -112,8 +108,8 @@ export default ({ data, pageContext }) => {
         </Box>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query BlogPostById($id: String!) {
@@ -161,4 +157,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

@@ -1,13 +1,13 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Flex } from "rebass"
-import { Post } from "../components/Post"
-import { Title } from "../components/basic/Title"
-import { Layout } from "../components/layout/Layout"
-import SEO from "../components/seo"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { Flex } from 'rebass';
+import { Post } from '../components/Post';
+import { Title } from '../components/basic/Title';
+import { Layout } from '../components/layout/Layout';
+import SEO from '../components/seo';
 
 export default ({ data, pageContext }) => {
-  const posts = data.allMdx.edges.flatMap(post => post.node)
+  const posts = data.allMdx.edges.flatMap((post) => post.node);
 
   return (
     <>
@@ -35,13 +35,13 @@ export default ({ data, pageContext }) => {
                 excerpt={excerpt}
                 readingTime={readingTime}
               />
-            )
+            ),
           )}
         </Flex>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query BlogPostsByCategory($category: String!) {
@@ -79,4 +79,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

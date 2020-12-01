@@ -1,7 +1,7 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Flex } from "rebass"
-import { Post } from "./Post"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { Flex } from 'rebass';
+import { Post } from './Post';
 
 export const RecentBlogs = () => {
   const result = useStaticQuery<GatsbyTypes.GetRecentPostsQuery>(graphql`
@@ -38,9 +38,9 @@ export const RecentBlogs = () => {
         }
       }
     }
-  `)
+  `);
 
-  const posts = result.allMdx.edges.flatMap(post => post.node)
+  const posts = result.allMdx.edges.flatMap((post) => post.node);
 
   return (
     <Flex flexDirection="row" flexWrap="wrap">
@@ -64,8 +64,8 @@ export const RecentBlogs = () => {
             excerpt={excerpt}
             readingTime={readingTime}
           />
-        )
+        ),
       )}
     </Flex>
-  )
-}
+  );
+};

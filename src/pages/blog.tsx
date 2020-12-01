@@ -1,10 +1,10 @@
-import React from "react"
-import { Link } from "gatsby"
-import { Text } from "rebass"
-import { Layout } from "../components/layout/Layout"
-import SEO from "../components/seo"
-import { Title } from "../components/basic/Title"
-import { Blog } from "../components/Blog"
+import React from 'react';
+import { Link } from 'gatsby';
+import { Text } from 'rebass';
+import { Layout } from '../components/layout/Layout';
+import SEO from '../components/seo';
+import { Title } from '../components/basic/Title';
+import { Blog } from '../components/Blog';
 
 const IndexPage = () => (
   <Layout>
@@ -12,6 +12,6 @@ const IndexPage = () => (
     <Title>blog posts</Title>
     <Blog />
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;

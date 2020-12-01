@@ -1,13 +1,13 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Link } from "../components/basic/Link"
+import React from 'react';
+import { graphql } from 'gatsby';
+import { Link } from '../components/basic/Link';
 // import Img from "gatsby-image"
 // import SEO from "../components/SEO"
-import { Box, Flex, Heading, Text } from "rebass"
-import { Layout } from "../components/layout/Layout"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import Img from "gatsby-image"
-import { Sidebar } from "../components/layout/Sidebar"
+import { Box, Flex, Heading, Text } from 'rebass';
+import { Layout } from '../components/layout/Layout';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import Img from 'gatsby-image';
+import { Sidebar } from '../components/layout/Sidebar';
 
 export default ({ data, pageContext }) => {
   const {
@@ -15,7 +15,7 @@ export default ({ data, pageContext }) => {
       body,
       //   frontmatter: { title, coverImage, date },
     },
-  } = data
+  } = data;
   return (
     <>
       {/* <SEO
@@ -26,8 +26,8 @@ export default ({ data, pageContext }) => {
         <MDXRenderer>{body}</MDXRenderer>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query PageById($id: String!) {
@@ -40,4 +40,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

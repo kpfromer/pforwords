@@ -1,8 +1,8 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Header } from "./Header"
-import { Box } from "rebass"
-import { Footer } from "./Footer"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { Header } from './Header';
+import { Box } from 'rebass';
+import { Footer } from './Footer';
 
 export const Layout = ({ children }) => {
   const data = useStaticQuery<GatsbyTypes.SiteTitleQueryQuery>(graphql`
@@ -13,7 +13,7 @@ export const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -23,5 +23,5 @@ export const Layout = ({ children }) => {
       </Box>
       <Footer />
     </>
-  )
-}
+  );
+};
