@@ -38,7 +38,8 @@ const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = async
           resolve(source, args, context, info) {
             const { hidden } = source;
             // Default to false
-            return hidden ?? false;
+            if (hidden === null || hidden === undefined) return false;
+            return hidden;
           },
         },
         // bottomGallery: {
