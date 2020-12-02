@@ -28,7 +28,6 @@ const ContactPage = () => {
         childDataJson {
           password
           content {
-            id
             image {
               childImageSharp {
                 fluid(maxWidth: 300) {
@@ -62,8 +61,8 @@ const ContactPage = () => {
       <SEO title="Content Library" />
       {valid ? (
         <Flex flexWrap="wrap" justifyContent="center">
-          {content.map((contentItem) => (
-            <Box key={contentItem.id} width={1 / 3} style={{ position: 'relative' }}>
+          {content.map((contentItem, index: number) => (
+            <Box key={index} width={1 / 3} style={{ position: 'relative' }}>
               <Img fluid={contentItem.image.childImageSharp.fluid} />
               <Flex
                 sx={{

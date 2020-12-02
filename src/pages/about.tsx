@@ -10,8 +10,8 @@ import SEO from '../components/seo';
 const Paragraph = (props) => <Text as="p" mb={3} {...props} />;
 
 const AboutPage = () => {
-  const result = useStaticQuery(graphql`
-    {
+  const result = useStaticQuery<GatsbyTypes.AboutPageQuery>(graphql`
+    query AboutPage {
       file(relativePath: { eq: "global/about.png" }) {
         childImageSharp {
           fluid(maxWidth: 800) {
