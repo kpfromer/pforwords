@@ -1,9 +1,14 @@
 import React from 'react';
-import { Text, Box, BoxProps } from 'rebass';
-import { FacebookShareCount, RedditShareCount, PinterestShareButton } from 'react-share';
-import { FacebookShareButton, RedditShareButton } from 'react-share';
 import { IconContext } from 'react-icons';
 import { FaFacebookF, FaPinterestP, FaRedditAlien } from 'react-icons/fa';
+import {
+  FacebookShareButton,
+  FacebookShareCount,
+  PinterestShareButton,
+  RedditShareButton,
+  RedditShareCount,
+} from 'react-share';
+import { Box, BoxProps, Text } from 'rebass';
 
 const ShareButton = ({ color, icon, children, ...rest }) => (
   <Box

@@ -1,7 +1,7 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { Flex, Box } from 'rebass';
+import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import React from 'react';
+import { Box, Flex } from 'rebass';
 import { Link } from 'theme-ui';
 
 export const InstagramFeed = () => {

@@ -1,12 +1,12 @@
+import { Input, Label } from '@rebass/forms';
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 import React, { useState } from 'react';
+import { IconContext } from 'react-icons';
+import { FaCloudDownloadAlt } from 'react-icons/fa';
+import { Box, Button, Flex, Heading, Link } from 'rebass';
 import { Layout } from '../components/layout/Layout';
 import SEO from '../components/seo';
-import { Button, Box, Flex, Link, Heading } from 'rebass';
-import { Label, Input } from '@rebass/forms';
-import Img from 'gatsby-image';
-import { useStaticQuery, graphql } from 'gatsby';
-import { FaCloudDownloadAlt } from 'react-icons/fa';
-import { IconContext } from 'react-icons';
 
 const ContactPage = () => {
   const {

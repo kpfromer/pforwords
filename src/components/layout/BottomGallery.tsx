@@ -1,6 +1,6 @@
-import React from 'react';
-import { Box, Heading, Flex } from 'rebass';
 import Img from 'gatsby-image';
+import React from 'react';
+import { Box, Flex, Heading } from 'rebass';
 import { Link } from '../basic/Link';
 
 interface Props {

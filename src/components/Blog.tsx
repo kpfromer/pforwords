@@ -1,8 +1,6 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { Flex, Box, Heading, Text, Image } from 'rebass';
-import { Link } from './basic/Link';
-import Img from 'gatsby-image';
+import { Flex } from 'rebass';
 import { Post } from './Post';
 
 export const Blog = () => {

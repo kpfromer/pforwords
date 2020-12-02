@@ -1,10 +1,10 @@
-import React from 'react';
-import { Box, Flex, Heading, Text, useThemeUI, Link as ThemeLink } from 'theme-ui';
-import { Link } from '../basic/Link';
-import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
-import { FaInstagram, FaPinterest, FaYoutube } from 'react-icons/fa';
+import Img from 'gatsby-image';
+import React from 'react';
 import { IconContext } from 'react-icons';
+import { FaInstagram, FaPinterest, FaYoutube } from 'react-icons/fa';
+import { Box, Flex, Heading, Link as ThemeLink, Text, useThemeUI } from 'theme-ui';
+import { Link } from '../basic/Link';
 
 export const Sidebar: React.FC = () => {
   const { file } = useStaticQuery<GatsbyTypes.SidebarImageQuery>(graphql`

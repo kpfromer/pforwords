@@ -1,6 +1,6 @@
 import React from 'react';
-import { Heading, HeadingProps, Box } from 'theme-ui';
 import { Flex } from 'rebass';
+import { Heading, HeadingProps } from 'theme-ui';
 
 export const Title: React.FC<HeadingProps> = ({ children, sx, ...rest }) => (
   // todo: fix typing

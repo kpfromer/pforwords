@@ -1,16 +1,16 @@
-import React from 'react';
 import { graphql } from 'gatsby';
-import { Link } from '../components/basic/Link';
+import Img from 'gatsby-image';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import React from 'react';
 // import Img from "gatsby-image"
 // import SEO from "../components/SEO"
 import { Box, Flex, Heading, Text } from 'rebass';
-import { Layout } from '../components/layout/Layout';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Img from 'gatsby-image';
-import { Sidebar } from '../components/layout/Sidebar';
-import { Share } from '../components/layout/Share';
-import SEO from '../components/seo';
+import { Link } from '../components/basic/Link';
 import { BottomGallery } from '../components/layout/BottomGallery';
+import { Layout } from '../components/layout/Layout';
+import { Share } from '../components/layout/Share';
+import { Sidebar } from '../components/layout/Sidebar';
+import SEO from '../components/seo';
 
 export default ({ data, pageContext }) => {
   const {

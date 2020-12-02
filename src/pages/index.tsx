@@ -1,12 +1,11 @@
-import React from 'react';
-import { Layout } from '../components/layout/Layout';
-import SEO from '../components/seo';
-import { Title } from '../components/basic/Title';
-import { RecentBlogs } from '../components/RecentBlogs';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import React from 'react';
 import { Box, Flex, Text } from 'rebass';
-import { Link } from 'gatsby';
+import { Title } from '../components/basic/Title';
+import { Layout } from '../components/layout/Layout';
+import { RecentBlogs } from '../components/RecentBlogs';
+import SEO from '../components/seo';
 
 const Paragraph = (props) => <Text as="p" fontSize={[2, 2, 3]} {...props} />;
 

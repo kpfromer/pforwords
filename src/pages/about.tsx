@@ -1,11 +1,11 @@
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 import React from 'react';
+import { Box, Flex, Heading } from 'rebass';
+import { Text } from 'theme-ui';
+import { Title } from '../components/basic/Title';
 import { Layout } from '../components/layout/Layout';
 import SEO from '../components/seo';
-import { Title } from '../components/basic/Title';
-import { Text } from 'theme-ui';
-import Img from 'gatsby-image';
-import { useStaticQuery, graphql } from 'gatsby';
-import { Box, Flex, Heading } from 'rebass';
 
 const Paragraph = (props) => <Text as="p" mb={3} {...props} />;
 

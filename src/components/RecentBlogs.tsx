@@ -1,5 +1,5 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { Flex } from 'rebass';
 import { Post } from './Post';
 

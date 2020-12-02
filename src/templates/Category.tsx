@@ -1,9 +1,9 @@
+import { graphql } from 'gatsby';
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { Flex } from 'rebass';
-import { Post } from '../components/Post';
 import { Title } from '../components/basic/Title';
 import { Layout } from '../components/layout/Layout';
+import { Post } from '../components/Post';
 import SEO from '../components/seo';
 
 export default ({ data, pageContext }) => {

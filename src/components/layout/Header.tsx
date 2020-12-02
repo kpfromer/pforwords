@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Flex, Heading } from 'theme-ui';
 import { Link as ThemeLink } from 'rebass';
+import { Box, Flex, Heading } from 'theme-ui';
 import { Link } from '../basic/Link';
 
 export const Header: React.FC<{ title: string }> = ({ title }) => {
