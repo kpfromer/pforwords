@@ -25,7 +25,7 @@ fields:
   config:
     maxSize: 64
   label: Cover Image
-  description: The image for thumbnails and summarys.
+  description: The image for thumbnails and summaries. <strong>THIS IS REQUIRED.</strong>
 - name: categories
   type: tag_list
   default: []
@@ -33,7 +33,8 @@ fields:
 - name: hidden
   type: boolean
   label: Hidden
-  description: Hides a blog post from the site.
+  description: Hides a blog post from the site. <strong>When selected</strong> it
+    means it will hide the page.
   default: false
 - name: bottomGallery
   type: field_group_list
