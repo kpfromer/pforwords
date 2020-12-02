@@ -30,6 +30,11 @@ fields:
   type: tag_list
   default: []
   label: Categories
+- name: hidden
+  type: boolean
+  label: Hidden
+  description: Hides a blog post from the site.
+  default: false
 - name: bottomGallery
   type: field_group_list
   fields:
