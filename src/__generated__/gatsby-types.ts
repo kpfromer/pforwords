@@ -3640,10 +3640,10 @@ declare namespace GatsbyTypes {
     pluginCreator___pluginOptions___saveButton___round = 'pluginCreator.pluginOptions.saveButton.round',
     pluginCreator___pluginOptions___saveButton___tall = 'pluginCreator.pluginOptions.saveButton.tall',
     pluginCreator___pluginOptions___username = 'pluginCreator.pluginOptions.username',
-    pluginCreator___pluginOptions___pathCheck = 'pluginCreator.pluginOptions.pathCheck',
-    pluginCreator___pluginOptions___allExtensions = 'pluginCreator.pluginOptions.allExtensions',
     pluginCreator___pluginOptions___isTSX = 'pluginCreator.pluginOptions.isTSX',
     pluginCreator___pluginOptions___jsxPragma = 'pluginCreator.pluginOptions.jsxPragma',
+    pluginCreator___pluginOptions___allExtensions = 'pluginCreator.pluginOptions.allExtensions',
+    pluginCreator___pluginOptions___pathCheck = 'pluginCreator.pluginOptions.pathCheck',
     pluginCreator___nodeAPIs = 'pluginCreator.nodeAPIs',
     pluginCreator___browserAPIs = 'pluginCreator.browserAPIs',
     pluginCreator___ssrAPIs = 'pluginCreator.ssrAPIs',
@@ -3888,10 +3888,10 @@ declare namespace GatsbyTypes {
     pluginOptions___saveButton___round = 'pluginOptions.saveButton.round',
     pluginOptions___saveButton___tall = 'pluginOptions.saveButton.tall',
     pluginOptions___username = 'pluginOptions.username',
-    pluginOptions___pathCheck = 'pluginOptions.pathCheck',
-    pluginOptions___allExtensions = 'pluginOptions.allExtensions',
     pluginOptions___isTSX = 'pluginOptions.isTSX',
     pluginOptions___jsxPragma = 'pluginOptions.jsxPragma',
+    pluginOptions___allExtensions = 'pluginOptions.allExtensions',
+    pluginOptions___pathCheck = 'pluginOptions.pathCheck',
     nodeAPIs = 'nodeAPIs',
     browserAPIs = 'browserAPIs',
     ssrAPIs = 'ssrAPIs',
@@ -4042,10 +4042,10 @@ declare namespace GatsbyTypes {
     readonly disableBgImage: Maybe<Scalars['Boolean']>;
     readonly saveButton: Maybe<SitePluginPluginOptionsSaveButton>;
     readonly username: Maybe<Scalars['String']>;
-    readonly pathCheck: Maybe<Scalars['Boolean']>;
-    readonly allExtensions: Maybe<Scalars['Boolean']>;
     readonly isTSX: Maybe<Scalars['Boolean']>;
     readonly jsxPragma: Maybe<Scalars['String']>;
+    readonly allExtensions: Maybe<Scalars['Boolean']>;
+    readonly pathCheck: Maybe<Scalars['Boolean']>;
   };
 
   type SitePluginPluginOptionsFilterInput = {
@@ -4086,10 +4086,10 @@ declare namespace GatsbyTypes {
     readonly disableBgImage: Maybe<BooleanQueryOperatorInput>;
     readonly saveButton: Maybe<SitePluginPluginOptionsSaveButtonFilterInput>;
     readonly username: Maybe<StringQueryOperatorInput>;
-    readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
-    readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
     readonly isTSX: Maybe<BooleanQueryOperatorInput>;
     readonly jsxPragma: Maybe<StringQueryOperatorInput>;
+    readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
+    readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
   };
 
   type SitePluginPluginOptionsPlugins = {
@@ -4323,5 +4323,101 @@ declare namespace GatsbyTypes {
 
   type PagesQueryQuery = {
     readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> };
+  };
+
+  type GetAllPostsQueryVariables = Exact<{ [key: string]: never }>;
+
+  type GetAllPostsQuery = {
+    readonly allMdx: {
+      readonly edges: ReadonlyArray<{
+        readonly node: Pick<Mdx, 'id' | 'excerpt'> & {
+          readonly fields: Maybe<
+            Pick<MdxFields, 'slug'> & {
+              readonly readingTime: Maybe<Pick<MdxFieldsReadingTime, 'text'>>;
+            }
+          >;
+          readonly frontmatter: Maybe<
+            Pick<MdxFrontmatter, 'title' | 'date' | 'categories'> & {
+              readonly coverImage: Maybe<{
+                readonly childImageSharp: Maybe<{
+                  readonly fluid: Maybe<
+                    Pick<ImageSharpFluid, 'src'> & GatsbyImageSharpFluid_tracedSVGFragment
+                  >;
+                }>;
+              }>;
+            }
+          >;
+        };
+      }>;
+    };
+  };
+
+  type GetInstagramPostsQueryVariables = Exact<{ [key: string]: never }>;
+
+  type GetInstagramPostsQuery = {
+    readonly allInstaNode: {
+      readonly edges: ReadonlyArray<{
+        readonly node: Pick<InstaNode, 'id'> & {
+          readonly localFile: Maybe<{
+            readonly childImageSharp: Maybe<{
+              readonly fixed: Maybe<
+                Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>
+              >;
+            }>;
+          }>;
+        };
+      }>;
+    };
+  };
+
+  type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never }>;
+
+  type SiteTitleQueryQuery = {
+    readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>;
+  };
+
+  type SidebarImageQueryVariables = Exact<{ [key: string]: never }>;
+
+  type SidebarImageQuery = {
+    readonly file: Maybe<{
+      readonly childImageSharp: Maybe<{
+        readonly fluid: Maybe<Pick<ImageSharpFluid, 'src'> & GatsbyImageSharpFluidFragment>;
+      }>;
+    }>;
+  };
+
+  type GetRecentPostsQueryVariables = Exact<{ [key: string]: never }>;
+
+  type GetRecentPostsQuery = {
+    readonly allMdx: {
+      readonly edges: ReadonlyArray<{
+        readonly node: Pick<Mdx, 'id' | 'excerpt'> & {
+          readonly fields: Maybe<
+            Pick<MdxFields, 'slug'> & {
+              readonly readingTime: Maybe<Pick<MdxFieldsReadingTime, 'text'>>;
+            }
+          >;
+          readonly frontmatter: Maybe<
+            Pick<MdxFrontmatter, 'title' | 'date' | 'categories'> & {
+              readonly coverImage: Maybe<{
+                readonly childImageSharp: Maybe<{
+                  readonly fluid: Maybe<
+                    Pick<ImageSharpFluid, 'src'> & GatsbyImageSharpFluid_tracedSVGFragment
+                  >;
+                }>;
+              }>;
+            }
+          >;
+        };
+      }>;
+    };
+  };
+
+  type SeoMetadataQueryVariables = Exact<{ [key: string]: never }>;
+
+  type SeoMetadataQuery = {
+    readonly site: Maybe<{
+      readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>>;
+    }>;
   };
 }
