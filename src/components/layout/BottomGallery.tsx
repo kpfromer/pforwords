@@ -1,10 +1,10 @@
-import React from "react"
-import { Box, Heading, Flex } from "rebass"
-import Img from "gatsby-image"
-import { Link } from "../basic/Link"
+import Img from 'gatsby-image';
+import React from 'react';
+import { Box, Flex, Heading } from 'rebass';
+import { Link } from '../basic/Link';
 
 interface Props {
-  data: { blogName: string; image: any }[]
+  data: { blogName: string; image: any }[];
 }
 
 export const BottomGallery: React.FC<Props> = ({ data }) => (
@@ -22,4 +22,4 @@ export const BottomGallery: React.FC<Props> = ({ data }) => (
       ))}
     </Flex>
   </Box>
-)
+);

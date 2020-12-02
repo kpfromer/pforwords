@@ -1,12 +1,12 @@
-import React, { useState } from "react"
-import { Layout } from "../components/layout/Layout"
-import SEO from "../components/seo"
-import { Button, Box, Flex, Link, Heading } from "rebass"
-import { Label, Input } from "@rebass/forms"
-import Img from "gatsby-image"
-import { useStaticQuery, graphql } from "gatsby"
-import { FaCloudDownloadAlt } from "react-icons/fa"
-import { IconContext } from "react-icons"
+import { Input, Label } from '@rebass/forms';
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
+import React, { useState } from 'react';
+import { IconContext } from 'react-icons';
+import { FaCloudDownloadAlt } from 'react-icons/fa';
+import { Box, Button, Flex, Heading, Link } from 'rebass';
+import { Layout } from '../components/layout/Layout';
+import SEO from '../components/seo';
 
 const ContactPage = () => {
   const {
@@ -16,7 +16,7 @@ const ContactPage = () => {
     file: {
       childDataJson: { password: wantedPassword, content },
     },
-  } = useStaticQuery(graphql`
+  } = useStaticQuery<GatsbyTypes.ContentLibraryQuery>(graphql`
     query ContentLibrary {
       site {
         siteMetadata {
@@ -43,40 +43,38 @@ const ContactPage = () => {
         }
       }
     }
-  `)
+  `);
 
   const [valid, setValid] = useState(
-    typeof window !== "undefined" &&
-      localStorage.getItem("content-library") === "true"
-  )
-  const [password, setPassword] = useState("")
-  const onSubmit = event => {
-    event.preventDefault()
+    typeof window !== 'undefined' && localStorage.getItem('content-library') === 'true',
+  );
+  const [password, setPassword] = useState('');
+  const onSubmit = (event) => {
+    event.preventDefault();
     if (password === wantedPassword) {
-      setValid(true)
-      typeof window !== "undefined" &&
-        window.localStorage.setItem("content-library", "true")
+      setValid(true);
+      typeof window !== 'undefined' && window.localStorage.setItem('content-library', 'true');
     }
-  }
+  };
   return (
     <Layout>
       <SEO title="Content Library" />
       {valid ? (
         <Flex flexWrap="wrap" justifyContent="center">
-          {content.map(contentItem => (
-            <Box width={1 / 3} style={{ position: "relative" }}>
+          {content.map((contentItem, index: number) => (
+            <Box key={index} width={1 / 3} style={{ position: 'relative' }}>
               <Img fluid={contentItem.image.childImageSharp.fluid} />
               <Flex
                 sx={{
-                  position: "absolute",
+                  position: 'absolute',
                   top: 0,
                   bottom: 0,
                   left: 0,
                   right: 0,
                   opacity: 0,
-                  transition: ".15s ease-in-out",
-                  "&:hover": {
-                    backgroundColor: "rgba(255,255,255,.8)",
+                  transition: '.15s ease-in-out',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255,255,255,.8)',
                     opacity: 1,
                   },
                 }}
@@ -89,17 +87,17 @@ const ContactPage = () => {
                   <Link
                     href={siteUrl + contentItem.pdf.publicURL}
                     sx={{
-                      color: "text",
-                      "&:hover": { color: "secondary" },
-                      textAlign: "center",
-                      display: "block",
+                      color: 'text',
+                      '&:hover': { color: 'secondary' },
+                      textAlign: 'center',
+                      display: 'block',
                     }}
                     mx="auto"
                   >
                     <IconContext.Provider
                       value={{
-                        size: "2.5em",
-                        style: { verticalAlign: "middle" },
+                        size: '2.5em',
+                        style: { verticalAlign: 'middle' },
                       }}
                     >
                       <FaCloudDownloadAlt />
@@ -114,17 +112,13 @@ const ContactPage = () => {
         <>
           <form onSubmit={onSubmit}>
             <Label htmlFor="password">Password</Label>
-            <Input
-              id="password"
-              onChange={e => setPassword(e.target.value)}
-              value={password}
-            />
+            <Input id="password" onChange={(e) => setPassword(e.target.value)} value={password} />
             <Button type="submit">Submit</Button>
           </form>
         </>
       )}
     </Layout>
-  )
-}
+  );
+};
 
-export default ContactPage
+export default ContactPage;

@@ -1,15 +1,16 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Flex, Box, Heading, Text, Image } from "rebass"
-import { Link } from "./basic/Link"
-import Img from "gatsby-image"
-import { Post } from "./Post"
+import { graphql, useStaticQuery } from 'gatsby';
+import React from 'react';
+import { Flex } from 'rebass';
+import { Post } from './Post';
 
 export const Blog = () => {
-  const result = useStaticQuery(graphql`
+  const result = useStaticQuery<GatsbyTypes.GetAllPostsQuery>(graphql`
     query GetAllPosts {
       allMdx(
-        filter: { fileAbsolutePath: { regex: "/content/blog/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/content/blog/" }
+          frontmatter: { hidden: { eq: false } }
+        }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         edges {
@@ -39,9 +40,9 @@ export const Blog = () => {
         }
       }
     }
-  `)
+  `);
 
-  const posts = result.allMdx.edges.flatMap(post => post.node)
+  const posts = result.allMdx.edges.flatMap((post) => post.node);
 
   return (
     <Flex flexDirection="row" flexWrap="wrap">
@@ -65,8 +66,8 @@ export const Blog = () => {
             excerpt={excerpt}
             readingTime={readingTime}
           />
-        )
+        ),
       )}
     </Flex>
-  )
-}
+  );
+};

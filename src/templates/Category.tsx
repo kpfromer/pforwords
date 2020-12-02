@@ -1,13 +1,13 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Flex } from "rebass"
-import { Post } from "../components/Post"
-import { Title } from "../components/basic/Title"
-import { Layout } from "../components/layout/Layout"
-import SEO from "../components/seo"
+import { graphql } from 'gatsby';
+import React from 'react';
+import { Flex } from 'rebass';
+import { Title } from '../components/basic/Title';
+import { Layout } from '../components/layout/Layout';
+import { Post } from '../components/Post';
+import SEO from '../components/seo';
 
 export default ({ data, pageContext }) => {
-  const posts = data.allMdx.edges.flatMap(post => post.node)
+  const posts = data.allMdx.edges.flatMap((post) => post.node);
 
   return (
     <>
@@ -35,20 +35,20 @@ export default ({ data, pageContext }) => {
                 excerpt={excerpt}
                 readingTime={readingTime}
               />
-            )
+            ),
           )}
         </Flex>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query BlogPostsByCategory($category: String!) {
     allMdx(
       filter: {
         fileAbsolutePath: { regex: "/content/blog/" }
-        frontmatter: { categories: { in: [$category] } }
+        frontmatter: { categories: { in: [$category] }, hidden: { eq: false } }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
@@ -79,4 +79,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

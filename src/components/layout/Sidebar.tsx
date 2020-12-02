@@ -1,21 +1,14 @@
-import React from "react"
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  useThemeUI,
-  Link as ThemeLink,
-} from "theme-ui"
-import { Link } from "../basic/Link"
-import Img from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
-import { FaInstagram, FaPinterest, FaYoutube } from "react-icons/fa"
-import { IconContext } from "react-icons"
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
+import React from 'react';
+import { IconContext } from 'react-icons';
+import { FaInstagram, FaPinterest, FaYoutube } from 'react-icons/fa';
+import { Box, Flex, Heading, Link as ThemeLink, Text, useThemeUI } from 'theme-ui';
+import { Link } from '../basic/Link';
 
 export const Sidebar: React.FC = () => {
-  const { file } = useStaticQuery(graphql`
-    {
+  const { file } = useStaticQuery<GatsbyTypes.SidebarImageQuery>(graphql`
+    query SidebarImage {
       file(relativePath: { eq: "global/sidebar-me.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
@@ -25,31 +18,29 @@ export const Sidebar: React.FC = () => {
         }
       }
     }
-  `)
-  const { theme } = useThemeUI()
+  `);
+  const { theme } = useThemeUI();
   return (
     <Box px={4}>
       <Box>
         <Img fluid={file.childImageSharp.fluid} />
-        <Heading mt={3} sx={{ textAlign: "center" }}>
-          Hi, I'm Taylor
+        <Heading mt={3} sx={{ textAlign: 'center' }}>
+          Hi, I&apos;m Taylor
         </Heading>
         <Text mt={3} pb={3} as="p">
-          Amateur adult. Zero waste zealot. Personal finance fiend. Spicy food
-          supporter. I’m an mid 20’s gal living in Denver, Colorado. My love of
-          the outdoors has cultivated my zero waste lifestyle, which
-          inadvertently fueled my passion for personal finance. Cheers to
-          everyone interested in lessening their footprint while growing their
-          wallet!
+          Amateur adult. Zero waste zealot. Personal finance fiend. Spicy food supporter. I’m an mid
+          20’s gal living in Denver, Colorado. My love of the outdoors has cultivated my zero waste
+          lifestyle, which inadvertently fueled my passion for personal finance. Cheers to everyone
+          interested in lessening their footprint while growing their wallet!
         </Text>
-        <Flex sx={{ justifyContent: "center" }} mb={3}>
+        <Flex sx={{ justifyContent: 'center' }} mb={3}>
           <IconContext.Provider
             value={{
               style: {
-                verticalAlign: "middle",
+                verticalAlign: 'middle',
                 color: theme.colors.secondary,
               },
-              size: "2em",
+              size: '2em',
             }}
           >
             <ThemeLink href="https://www.instagram.com/taylor.pforwords/">
@@ -67,16 +58,12 @@ export const Sidebar: React.FC = () => {
         <Heading>resources:</Heading>
 
         <Box py={3}>
-          <Link
-            to="/blog/100-swaps"
-            mb={3}
-            sx={{ display: "inline-block", color: "primary" }}
-          >
+          <Link to="/blog/100-swaps" mb={3} sx={{ display: 'inline-block', color: 'primary' }}>
             100 Zero Waste Swaps for your entire home &amp; life!
           </Link>
           <Link
             to="/blog/online-zero-waste-stores"
-            sx={{ display: "inline-block", color: "primary" }}
+            sx={{ display: 'inline-block', color: 'primary' }}
           >
             Online Zero Waste Stores (so you can live sustainably anywhere)!
           </Link>
@@ -84,5 +71,5 @@ export const Sidebar: React.FC = () => {
         <hr />
       </Box>
     </Box>
-  )
-}
+  );
+};

@@ -1,60 +1,51 @@
-import React from "react"
-import { Flex, Text, Box, BoxProps } from "rebass"
-import {
-  FacebookShareCount,
-  PinterestShareCount,
-  RedditShareCount,
-  PinterestShareButton,
-} from "react-share"
+import React from 'react';
+import { IconContext } from 'react-icons';
+import { FaFacebookF, FaPinterestP, FaRedditAlien } from 'react-icons/fa';
 import {
   FacebookShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  WhatsappShareButton,
+  FacebookShareCount,
+  PinterestShareButton,
   RedditShareButton,
-} from "react-share"
-import { FaFacebookF, FaPinterestP, FaRedditAlien } from "react-icons/fa"
-import { IconContext } from "react-icons"
+  RedditShareCount,
+} from 'react-share';
+import { Box, BoxProps, Text } from 'rebass';
 
 const ShareButton = ({ color, icon, children, ...rest }) => (
   <Box
     {...rest}
     sx={{
-      display: "inline-block",
+      display: 'inline-block',
       color,
       px: 3,
       py: 2,
       borderRadius: 9999,
       borderColor: color,
-      borderStyle: "solid",
-      borderWidth: "2px",
-      "&:hover": {
+      borderStyle: 'solid',
+      borderWidth: '2px',
+      '&:hover': {
         bg: color,
-        color: "white",
+        color: 'white',
       },
       ...rest.sx,
     }}
   >
-    <Box my="auto" sx={{ display: "inline-block" }} mr={2}>
-      <IconContext.Provider value={{ style: { verticalAlign: "middle" } }}>
+    <Box my="auto" sx={{ display: 'inline-block' }} mr={2}>
+      <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
         {icon}
       </IconContext.Provider>
     </Box>
     {children}
   </Box>
-)
+);
 
 interface Props {
-  shareUrl: string
-  imageUrl?: string
+  shareUrl: string;
+  imageUrl?: string;
 }
 
-export const Share: React.FC<Props & BoxProps> = ({
-  shareUrl,
-  imageUrl,
-  ...rest
-}) => {
+export const Share: React.FC<Props & Omit<BoxProps, 'css'>> = ({ shareUrl, imageUrl, ...rest }) => {
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     <Box {...rest}>
       {/* todo: counts */}
@@ -63,7 +54,7 @@ export const Share: React.FC<Props & BoxProps> = ({
           <ShareButton icon={<FaFacebookF />} color="#3b5998">
             Facebook
             <FacebookShareCount url={shareUrl}>
-              {shareCount => <Text>{shareCount}</Text>}
+              {(shareCount) => <Text>{shareCount}</Text>}
             </FacebookShareCount>
           </ShareButton>
         </FacebookShareButton>
@@ -87,9 +78,9 @@ export const Share: React.FC<Props & BoxProps> = ({
         </RedditShareButton>
 
         <RedditShareCount url={shareUrl}>
-          {shareCount => <Text>{shareCount}</Text>}
+          {(shareCount) => <Text>{shareCount}</Text>}
         </RedditShareCount>
       </Box>
     </Box>
-  )
-}
+  );
+};

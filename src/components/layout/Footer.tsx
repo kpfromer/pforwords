@@ -1,7 +1,7 @@
-import React from "react"
-import { Box, Flex, Link as ThemeLink } from "theme-ui"
-import { Link } from "../basic/Link"
-import { InstagramFeed } from "../InstagramFeed"
+import React from 'react';
+import { Box, Flex, Link as ThemeLink } from 'theme-ui';
+import { Link } from '../basic/Link';
+import { InstagramFeed } from '../InstagramFeed';
 
 export const Footer: React.FC = () => {
   return (
@@ -13,10 +13,10 @@ export const Footer: React.FC = () => {
             href="https://www.instagram.com/taylor.pforwords/"
             ml="auto"
             sx={{
-              textAlign: "center",
-              color: "white",
-              backgroundColor: "secondary",
-              display: "inline-block",
+              textAlign: 'center',
+              color: 'white',
+              backgroundColor: 'secondary',
+              display: 'inline-block',
               borderRadius: 5,
             }}
             p={2}
@@ -32,8 +32,8 @@ export const Footer: React.FC = () => {
         px={3}
         variant="container"
         sx={{
-          flexDirection: ["column", "column", "row"],
-          alignItems: "center",
+          flexDirection: ['column', 'column', 'row'],
+          alignItems: 'center',
         }}
       >
         <Link to="/" variant="nav">
@@ -56,5 +56,5 @@ export const Footer: React.FC = () => {
         </Link>
       </Flex>
     </Box>
-  )
-}
+  );
+};

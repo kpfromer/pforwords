@@ -1,6 +1,6 @@
-import React from "react"
-import { Heading, HeadingProps, Box } from "theme-ui"
-import { Flex } from "rebass"
+import React from 'react';
+import { Flex } from 'rebass';
+import { Heading, HeadingProps } from 'theme-ui';
 
 export const Title: React.FC<HeadingProps> = ({ children, sx, ...rest }) => (
   // todo: fix typing
@@ -12,34 +12,34 @@ export const Title: React.FC<HeadingProps> = ({ children, sx, ...rest }) => (
       sx={{
         ...sx,
         fontSize: 5,
-        px: "30px",
-        position: "relative",
-        "&:before": {
+        px: '30px',
+        position: 'relative',
+        '&:before': {
           content: "''",
-          position: "absolute",
+          position: 'absolute',
           left: 0,
-          top: "50%",
-          mt: "-2px",
-          width: "20px",
-          height: "4px",
-          borderTop: "1px solid #c4c4c4",
-          borderBottom: "1px solid #c4c4c4",
+          top: '50%',
+          mt: '-2px',
+          width: '20px',
+          height: '4px',
+          borderTop: '1px solid #c4c4c4',
+          borderBottom: '1px solid #c4c4c4',
         },
-        "&:after": {
+        '&:after': {
           content: "''",
-          position: "absolute",
-          left: "auto",
-          right: "0",
-          top: "50%",
-          mt: "-2px",
-          width: "20px",
-          height: "4px",
-          borderTop: "1px solid #c4c4c4",
-          borderBottom: "1px solid #c4c4c4",
+          position: 'absolute',
+          left: 'auto',
+          right: '0',
+          top: '50%',
+          mt: '-2px',
+          width: '20px',
+          height: '4px',
+          borderTop: '1px solid #c4c4c4',
+          borderBottom: '1px solid #c4c4c4',
         },
       }}
     >
       {children}
     </Heading>
   </Flex>
-)
+);
