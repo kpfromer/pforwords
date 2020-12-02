@@ -28,7 +28,10 @@ const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
     `
       {
         allMdx(
-          filter: { fileAbsolutePath: { regex: "/content/blog/" } }
+          filter: {
+            fileAbsolutePath: { regex: "/content/blog/" }
+            frontmatter: { hidden: { eq: false } }
+          }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {

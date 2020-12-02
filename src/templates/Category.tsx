@@ -48,7 +48,7 @@ export const query = graphql`
     allMdx(
       filter: {
         fileAbsolutePath: { regex: "/content/blog/" }
-        frontmatter: { categories: { in: [$category] } }
+        frontmatter: { categories: { in: [$category] }, hidden: { eq: false } }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {

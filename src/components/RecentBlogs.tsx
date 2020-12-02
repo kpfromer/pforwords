@@ -7,7 +7,10 @@ export const RecentBlogs = () => {
   const result = useStaticQuery<GatsbyTypes.GetRecentPostsQuery>(graphql`
     query GetRecentPosts {
       allMdx(
-        filter: { fileAbsolutePath: { regex: "/content/blog/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/content/blog/" }
+          frontmatter: { hidden: { eq: false } }
+        }
         limit: 3
         sort: { fields: frontmatter___date, order: DESC }
       ) {

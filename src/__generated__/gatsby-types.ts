@@ -1098,6 +1098,7 @@ declare namespace GatsbyTypes {
     childMdx___fileAbsolutePath = 'childMdx.fileAbsolutePath',
     childMdx___frontmatter___title = 'childMdx.frontmatter.title',
     childMdx___frontmatter___categories = 'childMdx.frontmatter.categories',
+    childMdx___frontmatter___hidden = 'childMdx.frontmatter.hidden',
     childMdx___frontmatter___date = 'childMdx.frontmatter.date',
     childMdx___frontmatter___coverImage___sourceInstanceName = 'childMdx.frontmatter.coverImage.sourceInstanceName',
     childMdx___frontmatter___coverImage___absolutePath = 'childMdx.frontmatter.coverImage.absolutePath',
@@ -2125,6 +2126,7 @@ declare namespace GatsbyTypes {
     localFile___childMdx___fileAbsolutePath = 'localFile.childMdx.fileAbsolutePath',
     localFile___childMdx___frontmatter___title = 'localFile.childMdx.frontmatter.title',
     localFile___childMdx___frontmatter___categories = 'localFile.childMdx.frontmatter.categories',
+    localFile___childMdx___frontmatter___hidden = 'localFile.childMdx.frontmatter.hidden',
     localFile___childMdx___frontmatter___date = 'localFile.childMdx.frontmatter.date',
     localFile___childMdx___frontmatter___bottomGallery = 'localFile.childMdx.frontmatter.bottomGallery',
     localFile___childMdx___slug = 'localFile.childMdx.slug',
@@ -2323,6 +2325,7 @@ declare namespace GatsbyTypes {
     fileAbsolutePath = 'fileAbsolutePath',
     frontmatter___title = 'frontmatter.title',
     frontmatter___categories = 'frontmatter.categories',
+    frontmatter___hidden = 'frontmatter.hidden',
     frontmatter___date = 'frontmatter.date',
     frontmatter___coverImage___sourceInstanceName = 'frontmatter.coverImage.sourceInstanceName',
     frontmatter___coverImage___absolutePath = 'frontmatter.coverImage.absolutePath',
@@ -2581,6 +2584,7 @@ declare namespace GatsbyTypes {
   type MdxFrontmatter = {
     readonly title: Scalars['String'];
     readonly categories: Maybe<ReadonlyArray<Scalars['String']>>;
+    readonly hidden: Scalars['Boolean'];
     readonly date: Maybe<Scalars['Date']>;
     readonly coverImage: Maybe<File>;
     readonly bottomGallery: Maybe<ReadonlyArray<Maybe<MdxFrontmatterBottomGallery>>>;
@@ -2610,6 +2614,7 @@ declare namespace GatsbyTypes {
   type MdxFrontmatterFilterInput = {
     readonly title: Maybe<StringQueryOperatorInput>;
     readonly categories: Maybe<StringQueryOperatorInput>;
+    readonly hidden: Maybe<BooleanQueryOperatorInput>;
     readonly date: Maybe<DateQueryOperatorInput>;
     readonly coverImage: Maybe<FileFilterInput>;
     readonly bottomGallery: Maybe<MdxFrontmatterBottomGalleryFilterListInput>;

@@ -27,10 +27,18 @@ const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = async
           type: '[String!]',
           resolve(source, args, context, info) {
             const { categories } = source;
-            if (categories == null || (Array.isArray(categories) && !categories.length)) {
+            if (!categories || (Array.isArray(categories) && !categories.length)) {
               return ['uncategorized'];
             }
             return categories;
+          },
+        },
+        hidden: {
+          type: 'Boolean!',
+          resolve(source, args, context, info) {
+            const { hidden } = source;
+            // Default to false
+            return hidden ?? false;
           },
         },
         // bottomGallery: {
